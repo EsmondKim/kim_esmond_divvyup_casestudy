@@ -1,0 +1,39 @@
+#signin-body {
+    background-image: url(../../public/images/table_overhead.jpg);
+}
+
+#registration-body {
+    background-image: url(../../public/images/at_the_table.jpg);
+}
+
+.nav-text {
+    font-weight: bold;
+    color: #00FFFF;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid rgba(204, 204, 204, 0.76);
+    border-radius: 1em;
+    background-color: azure;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
