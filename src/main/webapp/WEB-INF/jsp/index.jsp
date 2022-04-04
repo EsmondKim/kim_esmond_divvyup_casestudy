@@ -48,10 +48,10 @@
 <body id="signin-body">
 <ul class="nav nav-tabs"><!--Bootstrap Nav-->
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="./index.jsp">Sign In</a>
+        <a class="nav-link active" aria-current="page" href="/index">Sign In</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link nav-text" href="./user/registration.jsp">Registration</a>
+        <a class="nav-link nav-text" href="/user/registration">Registration</a>
     </li>
     <li class="nav-item">
         <a class="nav-link nav-text" href="./menu.html">Menu</a>
@@ -74,7 +74,7 @@
                     style="margin-top: 20px; margin-left: 8px; width: 84px; height: 45px; font-size:14px;
                 font-weight:700">
                 Submit</button>
-            <a href="./user/registration.jsp"><p>Not a Member?  Click here to register for Richie M's Restaurant Menu App.</p></a>
+            <a href="/user/registration"><p>Not a Member?  Click here to register for Richie M's Restaurant Menu App.</p></a>
         </div><!--sign on fields row-->
     </form>
 

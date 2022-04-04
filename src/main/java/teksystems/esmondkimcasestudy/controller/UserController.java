@@ -29,7 +29,7 @@ public class UserController {
     @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
     public ModelAndView registerSubmit(RegisterFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("user/register");
+        response.setViewName("user/registration");
 
         User user = new User();
 
