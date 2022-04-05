@@ -33,26 +33,33 @@
 
     <form class="wrapper" action="/user/registerSubmit", method="post">
         <div class="row"><!--registration fields row-->
+            <input type="hidden" name="id" value="${form.id}">
+
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="firstName" id="firstNameId" placeholder="First Name">
+                <input type="text" class="form-control" name="firstName" id="firstNameId" value="${form.firstName}" placeholder="First Name">
                 <label for="firstNameId">First Name</label>
             </div> <!--form-floating mb-3-->
+
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="lastName" id="lastNameId" placeholder="Last Name">
+                <input type="text" class="form-control" name="lastName" id="lastNameId" value="${form.lastName}" placeholder="Last Name">
                 <label for="lastNameId">Last Name</label>
             </div> <!--form-floating mb-3-->
+
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="email" id="emailId" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="emailId" value="${form.email}" placeholder="name@example.com">
                 <label for="emailId">Email Address</label>
             </div> <!--form-floating mb-3-->
+
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" name="password" id="passwordId" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="passwordId" value="${form.password}" placeholder="Password">
                 <label for="passwordId">Password</label>
             </div> <!--form-floating mb-3-->
+
             <div class="form-floating">
-                <input type="password" class="form-control" name="confirmPassword" id="confirmPasswordId" placeholder="Confirm Password">
+                <input type="password" class="form-control" name="confirmPassword" id="confirmPasswordId" value="${form.password}" placeholder="Confirm Password">
                 <label for="confirmPasswordId">Confirm Password</label>
             </div> <!--form-floating-->
+
             <button type="submit" class="btn btn-info"
                     style="margin-top: 20px; margin-left: 8px; width: 84px; height: 45px; font-size:14px;
           font-weight:700">
