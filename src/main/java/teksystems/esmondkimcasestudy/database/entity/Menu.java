@@ -13,8 +13,8 @@ public class Menu {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "dish")
-    private String dish;
+    @Column(name = "item")
+    private String item;
 
     @Lob
     @Column(name = "description", columnDefinition = "text")

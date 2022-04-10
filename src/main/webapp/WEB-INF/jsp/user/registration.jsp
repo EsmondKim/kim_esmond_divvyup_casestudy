@@ -1,5 +1,4 @@
 <jsp:include page="../include/header.jsp"/>
-
 <title>Richie M's | Registration</title>
 
 <%--<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>--%>
@@ -8,19 +7,6 @@
 <%--        console.log( "ready!" );--%>
 <%--    });--%>
 <%--</script>--%>
-
-<body id="registration-body">
-<ul class="nav nav-tabs"><!--Bootstrap Nav-->
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/index">Sign In</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav-text" href="/user/registration">Registration</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav-text" href="./menu.html">Menu</a>
-    </li>
-</ul><!--Bootstrap Nav-->
 
 <div class="container">
 

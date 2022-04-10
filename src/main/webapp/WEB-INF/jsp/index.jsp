@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../../public/css/styles.css">
 <title>Richie M's | Sign On</title>
 
 <jsp:include page="./include/header.jsp"/>
@@ -31,19 +30,6 @@
     function sendToMenu() { window.location.href = "./menu.html"} ;
 </script>
 
-<body id="signin-body">
-<ul class="nav nav-tabs"><!--Bootstrap Nav-->
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/index">Sign In</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav-text" href="/user/registration">Registration</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav-text" href="./menu.html">Menu</a>
-    </li>
-</ul><!--Bootstrap Nav-->
-
 <div class="container">
 
     <form class="wrapper">
@@ -63,8 +49,6 @@
             <a href="/user/registration"><p>Not a Member?  Click here to register for Richie M's Restaurant Menu App.</p></a>
         </div><!--sign on fields row-->
     </form>
-
-</div><!--div class="container" (for bootstrap)-->
 
 <script>
     $( "button" ).on( "click", function() {
