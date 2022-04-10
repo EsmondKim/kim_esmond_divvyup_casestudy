@@ -26,7 +26,7 @@
 
     <form class="wrapper" action="/user/registerSubmit", method="post">
         <div class="row"><!--registration fields row-->
-            <input type="hidden" name="id" value="${form.userId}">
+            <input type="hidden" name="id" value="${form.id}">
 
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="firstName" id="firstNameId" value="${form.firstName}" placeholder="First Name">

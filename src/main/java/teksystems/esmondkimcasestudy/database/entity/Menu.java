@@ -10,8 +10,8 @@ import javax.persistence.*;
 public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "dish_id")
-    private int dishId;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "dish")
     private String dish;

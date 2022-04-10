@@ -13,7 +13,7 @@ import javax.validation.constraints.Pattern;
 @ToString
 public class RegisterFormBean {
 
-    private Integer userId;
+    private Integer id;
 
     @NotBlank(message = "First Name is required.")
     private String firstName;

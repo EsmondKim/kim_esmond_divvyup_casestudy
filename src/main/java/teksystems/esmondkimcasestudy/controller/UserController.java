@@ -54,7 +54,7 @@ public class UserController {
             return response;
         }//if bindingResult.hasErrors()
 
-        User user = UserDAO.findByUserId(form.getUserId());
+        User user = UserDAO.findById(form.getId());
 
         if ( user == null ) {
             user = new User();
@@ -70,22 +70,22 @@ public class UserController {
 
         log.info(form.toString());
 
-        response.setViewName("redirect:/user/edit/" + user.getUserId());
+        response.setViewName("redirect:/user/edit/" + user.getId());
 
         return response;
     }//ModelAndView registerSubmit()
 
 
-    @GetMapping("/user/edit/{userId}")
-    public ModelAndView editUser(@PathVariable("userId") Integer userId) throws Exception {
+    @GetMapping("/user/edit/{id}")
+    public ModelAndView editUser(@PathVariable("id") Integer id) throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("user/registration");
 
-        User user = UserDAO.findByUserId(userId);
+        User user = UserDAO.findById(id);
 
         RegisterFormBean form = new RegisterFormBean();
 
-        form.setUserId(user.getUserId());
+        form.setId(user.getId());
         form.setFirstName(user.getFirstName());
         form.setLastName(user.getLastName());
         form.setEmail(user.getEmail());
