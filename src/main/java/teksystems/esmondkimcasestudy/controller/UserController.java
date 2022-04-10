@@ -3,6 +3,9 @@ package teksystems.esmondkimcasestudy.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +15,9 @@ import teksystems.esmondkimcasestudy.database.dao.UserDAO;
 import teksystems.esmondkimcasestudy.database.entity.User;
 import teksystems.esmondkimcasestudy.formbean.RegisterFormBean;
 
+import javax.validation.Valid;
 import java.util.Date;
+import java.util.HashMap;
 
 @Slf4j
 @Controller
@@ -33,11 +38,23 @@ public class UserController {
     }//ModelAndView index()
 
     @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
-    public ModelAndView registerSubmit(RegisterFormBean form) throws Exception {
+    public ModelAndView registerSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
-//        response.setViewName("user/registration");
 
-        User user = UserDAO.findById(form.getId());
+        if ( bindingResult.hasErrors() ) {
+            HashMap errors = new HashMap();
+
+            for (ObjectError error : bindingResult.getAllErrors() ) {
+//                errors.put( ((FieldError) error ).getField(), error.getDefaultMessage() );
+                log.info ( ((FieldError) error).getField() + " " + error.getDefaultMessage() );
+            }
+            response.addObject("formErrors", errors);
+
+            response.setViewName("user/register");
+            return response;
+        }//if bindingResult.hasErrors()
+
+        User user = UserDAO.findByUserId(form.getUserId());
 
         if ( user == null ) {
             user = new User();
@@ -53,21 +70,22 @@ public class UserController {
 
         log.info(form.toString());
 
-        response.setViewName("redirect:/user/edit/" + user.getId());
+        response.setViewName("redirect:/user/edit/" + user.getUserId());
 
         return response;
     }//ModelAndView registerSubmit()
+
 
     @GetMapping("/user/edit/{userId}")
     public ModelAndView editUser(@PathVariable("userId") Integer userId) throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("user/registration");
 
-        User user = UserDAO.findById(userId);
+        User user = UserDAO.findByUserId(userId);
 
         RegisterFormBean form = new RegisterFormBean();
 
-        form.setId(user.getId());
+        form.setUserId(user.getUserId());
         form.setFirstName(user.getFirstName());
         form.setLastName(user.getLastName());
         form.setEmail(user.getEmail());
