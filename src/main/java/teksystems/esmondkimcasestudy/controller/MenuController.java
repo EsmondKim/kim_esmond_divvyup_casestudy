@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import teksystems.esmondkimcasestudy.database.dao.MenuDAO;
 import teksystems.esmondkimcasestudy.database.dao.DinerDAO;
@@ -25,6 +23,8 @@ public class MenuController {
 
     @Autowired
     private MenuDAO MenuDAO;
+
+    @Autowired
     private DinerDAO DinerDAO;
 
     @GetMapping("/menu/menu")
@@ -39,23 +39,23 @@ public class MenuController {
     return response;
     }
 
-    @RequestMapping(value = "/diner/submit", method = RequestMethod.POST)
-    public ModelAndView dinerSubmit() throws Exception {
+    @PostMapping("/diner/submit")
+    public ModelAndView dinerSubmit(DinerFormBean form) {
         ModelAndView response =new ModelAndView();
-
-        DinerFormBean form = new DinerFormBean();
 
         Diner diner = new Diner();
 
         diner.setDinerNickname(form.getDinerNickname());
         diner.setSeatNumber(form.getSeatNumber());
         diner.setCreditCard(form.getCreditCard());
-        diner.setStatus(form.getStatus());
-        diner.setUserId(form.getUserId());
-
+//        diner.setStatus(form.getStatus());
+//        diner.setUserId(form.getUserId());
+        log.info(String.valueOf(form));
+        log.info(String.valueOf(diner));
         DinerDAO.save(diner);
 
-        response.setViewName("redirect:/user/edit/" + diner.getId());
+        response.setViewName("redirect:/menu/menu/");
+//        response.setViewName("redirect:/user/edit/" + diner.getId());
 
         return response;
     }

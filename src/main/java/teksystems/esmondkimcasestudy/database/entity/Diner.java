@@ -1,6 +1,7 @@
 package teksystems.esmondkimcasestudy.database.entity;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 
@@ -17,15 +18,23 @@ public class Diner {
     private String dinerNickname;
 
     @Column(name = "seat_number")
-    private String seatNumber;
+    private Integer seatNumber;
 
     @Column(name = "credit_card")
     private String creditCard;
 
-    @Column(name = "status")
-    private String status;
+//    @Column(name = "status")
+//    private String status;
 
-    @Column(name = "user_id")
-    private String userId;
+//    @OneToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "user_id", nullable = false)
+//    private User user;
+
+//    private String userId;
+
+    public Diner() {
+        
+    }
 
 }
+

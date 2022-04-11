@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface MenuDAO extends JpaRepository<Menu, Long> {
+
     public List<Menu> findAll();
 
 }

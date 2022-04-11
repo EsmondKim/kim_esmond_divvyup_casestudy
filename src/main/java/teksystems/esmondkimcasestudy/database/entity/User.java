@@ -32,6 +32,11 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
 
+//    @OneToOne(fetch = FetchType.LAZY,
+//            cascade =  CascadeType.ALL,
+//            mappedBy = "user")
+//    private Diner diner;
+
     public User() {
 
     }

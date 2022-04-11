@@ -13,12 +13,12 @@ public class DinerFormBean {
 
     private String dinerNickname;
 
-    private String seatNumber;
+    private Integer seatNumber;
 
     private String creditCard;
 
-    private String status;
+//    private String status;
 
-    private String userId;
+//    private String userId;
 
 }
