@@ -30,6 +30,8 @@
     function sendToMenu() { window.location.href = "./menu.html"} ;
 </script>
 
+<body>
+
 <div class="container">
 
     <form class="wrapper">
