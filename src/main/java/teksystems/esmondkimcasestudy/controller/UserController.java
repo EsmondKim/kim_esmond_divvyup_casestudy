@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 @Slf4j
 @Controller
-public class UserController {
+public class  UserController {
     @Autowired
     private UserDAO UserDAO;
 
@@ -37,20 +37,20 @@ public class UserController {
         return response;
     }//ModelAndView index()
 
-    @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/registerSubmit", method = { RequestMethod.POST, RequestMethod.GET})
     public ModelAndView registerSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
         if ( bindingResult.hasErrors() ) {
-            HashMap errors = new HashMap();
 
             for (ObjectError error : bindingResult.getAllErrors() ) {
-//                errors.put( ((FieldError) error ).getField(), error.getDefaultMessage() );
                 log.info ( ((FieldError) error).getField() + " " + error.getDefaultMessage() );
             }
-            response.addObject("formErrors", errors);
 
-            response.setViewName("user/register");
+            response.addObject("form", form);
+            response.addObject("bindingResult", bindingResult);
+
+            response.setViewName("user/registration");
             return response;
         }//if bindingResult.hasErrors()
 

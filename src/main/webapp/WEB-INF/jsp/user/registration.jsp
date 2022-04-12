@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="../include/header.jsp"/>
 <title>Richie M's | Registration</title>
 
@@ -10,33 +12,56 @@
 
 <div class="container">
 
-    <form class="wrapper" action="/user/registerSubmit", method="post">
+    <c:if test="${empty form.id}">
+    <h1>Sign Up</h1>
+    </c:if>
+
+    <c:if test="${not empty form.id}">
+    <h1>Edit User</h1>
+    </c:if>
+
+    <form class="wrapper" action="/user/registerSubmit", method="get">
         <div class="row"><!--registration fields row-->
             <input type="hidden" name="id" value="${form.id}">
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="firstName" id="firstNameId" value="${form.firstName}" placeholder="First Name">
+                <input type="text" class="form-control" name="firstName" id="firstNameId" value="${form.firstName}">
                 <label for="firstNameId">First Name</label>
+                <c:forEach items='${bindingResult.getFieldErrors("firstName")}' var="error">
+                    <div style="color:red;">${error.getDefaultMessage()}</div>
+                </c:forEach>
             </div> <!--form-floating mb-3-->
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="lastName" id="lastNameId" value="${form.lastName}" placeholder="Last Name">
+                <input type="text" class="form-control" name="lastName" id="lastNameId" value="${form.lastName}">
                 <label for="lastNameId">Last Name</label>
+                <c:forEach items='${bindingResult.getFieldErrors("lastName")}' var="error">
+                    <div style="color:red;">${error.getDefaultMessage()}</div>
+                </c:forEach>
             </div> <!--form-floating mb-3-->
 
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="email" id="emailId" value="${form.email}" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="emailId" value="${form.email}">
                 <label for="emailId">Email Address</label>
+                <c:forEach items='${bindingResult.getFieldErrors("email")}' var="error">
+                    <div style="color:red;">${error.getDefaultMessage()}</div>
+                </c:forEach>
             </div> <!--form-floating mb-3-->
 
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" name="password" id="passwordId" value="${form.password}" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="passwordId" value="${form.password}">
                 <label for="passwordId">Password</label>
+                <c:forEach items='${bindingResult.getFieldErrors("password")}' var="error">
+                    <div style="color:red;">${error.getDefaultMessage()}</div>
+                </c:forEach>
             </div> <!--form-floating mb-3-->
 
             <div class="form-floating">
-                <input type="password" class="form-control" name="confirmPassword" id="confirmPasswordId" value="${form.password}" placeholder="Confirm Password">
+                <input type="password" class="form-control" name="confirmPassword" id="confirmPasswordId" value="${form.password}">
                 <label for="confirmPasswordId">Confirm Password</label>
+                <c:forEach items='${bindingResult.getFieldErrors("confirmPassword")}' var="error">
+                    <div style="color:red;">${error.getDefaultMessage()}</div>
+                </c:forEach>
             </div> <!--form-floating-->
 
             <button type="submit" class="btn btn-info"
@@ -46,14 +71,5 @@
             <!-- <pre><p>Not a Member? Click <a href="./registration.html">here</a> to register for Richie M's Restaurant Menu App.</p></pre> -->
         </div><!--registration fields row-->
     </form>
-
-
-
-<%--<script>--%>
-<%--    $( "button" ).on( "click", function() {--%>
-<%--        console.log("clicked!")--%>
-<%--        window.location.href = "./menu.html";--%>
-<%--    });--%>
-<%--</script>--%>
 
 <jsp:include page="../include/footer.jsp"/>
