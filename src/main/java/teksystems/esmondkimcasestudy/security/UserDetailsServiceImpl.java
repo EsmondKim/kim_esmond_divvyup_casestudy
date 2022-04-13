@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import teksystems.esmondkimcasestudy.database.dao.UserDAO;
+//import teksystems.esmondkimcasestudy.database.dao.UserRoleDAO;
 import teksystems.esmondkimcasestudy.database.dao.UserRoleDAO;
 import teksystems.esmondkimcasestudy.database.entity.User;
 import teksystems.esmondkimcasestudy.database.entity.UserRole;

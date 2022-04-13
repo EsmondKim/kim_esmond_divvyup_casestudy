@@ -4,7 +4,9 @@ import lombok.Data;
 import org.hibernate.dialect.function.TemplateRenderer;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -32,10 +34,11 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
 
-//    @OneToOne(fetch = FetchType.LAZY,
-//            cascade =  CascadeType.ALL,
-//            mappedBy = "user")
-//    private Diner diner;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<UserRole> userRole = new ArrayList<>();
+
+    @OneToMany(mappedBy = "diner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Diner> diner = new ArrayList<>();
 
     public User() {
 

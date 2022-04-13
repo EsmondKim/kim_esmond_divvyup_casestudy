@@ -23,4 +23,7 @@ public class Menu {
     @Column(name = "price")
     private Integer price;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Menu menu;
+
 }

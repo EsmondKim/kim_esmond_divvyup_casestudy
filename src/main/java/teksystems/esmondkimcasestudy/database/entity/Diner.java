@@ -23,14 +23,14 @@ public class Diner {
     @Column(name = "credit_card")
     private String creditCard;
 
+    @Column(name = "user_id")
+    private Integer userId;
+
 //    @Column(name = "status")
 //    private String status;
-
-//    @OneToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
-
-//    private String userId;
+//
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Diner diner;
 
     public Diner() {
         
