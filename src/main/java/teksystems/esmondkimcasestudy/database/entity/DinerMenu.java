@@ -10,24 +10,20 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class DinerMenu {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "seat_number_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "seat_number_id")
     private Diner diner;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id")
     private Menu menu;
-
-    @Column(name = "seat_number_id", updatable = false, insertable = false)
-    private Integer seatNumberId;
-
-    @Column(name = "item_id", updatable = false, insertable = false)
-    private int itemId;
 
     @Column(name = "quantity")
     private Integer quantity;

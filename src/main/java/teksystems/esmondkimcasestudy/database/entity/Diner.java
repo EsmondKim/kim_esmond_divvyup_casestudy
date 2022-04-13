@@ -1,14 +1,21 @@
 package teksystems.esmondkimcasestudy.database.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="diners")
+@Getter
+@Setter
 @Data
 public class Diner {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,11 +33,8 @@ public class Diner {
     @Column(name = "user_id")
     private Integer userId;
 
-//    @Column(name = "status")
-//    private String status;
-//
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Diner diner;
+    @OneToMany(mappedBy = "diner")
+    private Set<DinerMenu> dinerMenus = new HashSet<DinerMenu>();
 
     public Diner() {
         

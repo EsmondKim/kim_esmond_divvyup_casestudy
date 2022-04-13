@@ -19,13 +19,13 @@ public class UserRole {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "user_id", insertable="false", updatable="false")
+    @Column(name = "user_id", insertable=false, updatable=false)
     private Integer userId;
 
     @Column(name = "user_role")
     private String userRole;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    private User user;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private User user;
 
 }

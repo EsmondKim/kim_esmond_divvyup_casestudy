@@ -37,9 +37,6 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<UserRole> userRole = new ArrayList<>();
 
-    @OneToMany(mappedBy = "diner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Diner> diner = new ArrayList<>();
-
     public User() {
 
     }
