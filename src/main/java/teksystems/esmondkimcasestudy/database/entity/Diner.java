@@ -30,9 +30,12 @@ public class Diner {
     @Column(name = "credit_card")
     private String creditCard;
 
-    @Column(name = "user_id")
-    private Integer userId;
+    //Many diners can have one user (server) in this ManyToOne from the users table.
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id")
+    private User user;
 
+    //One side of ManyToMany Join in the DinerMenu table.
     @OneToMany(mappedBy = "diner")
     private Set<DinerMenu> dinerMenus = new HashSet<DinerMenu>();
 

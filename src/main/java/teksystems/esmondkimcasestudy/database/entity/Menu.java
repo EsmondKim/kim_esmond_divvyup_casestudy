@@ -30,6 +30,7 @@ public class Menu {
     @Column(name = "price")
     private Integer price;
 
+    //One side of ManyToMany Join in the DinerMenu table.
     @OneToMany(mappedBy = "menu")
     private Set<DinerMenu> dinerMenus = new HashSet<DinerMenu>();
 
