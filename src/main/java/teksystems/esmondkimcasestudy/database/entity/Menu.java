@@ -12,7 +12,6 @@ import java.util.Set;
 @Table(name="menus")
 @Getter
 @Setter
-@Data
 public class Menu {
 
     @Id

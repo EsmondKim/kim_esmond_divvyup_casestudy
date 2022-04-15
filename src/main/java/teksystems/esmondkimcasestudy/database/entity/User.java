@@ -1,17 +1,20 @@
 package teksystems.esmondkimcasestudy.database.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.dialect.function.TemplateRenderer;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="users")
-@Data
-
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,12 +39,10 @@ public class User {
 
     //Other side of the ManyToOne in the user_roles table.  Sending one user out to many possible roles
     //in the user_roles table.
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<UserRole> userRole = new ArrayList<>();
 
     //OneToMany: One user/waiter to many diners at one table in the diners table.
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Diner> diner = new ArrayList<>();
+    private Set<Diner> diner;
 
     public User() {
 

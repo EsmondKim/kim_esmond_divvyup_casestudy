@@ -20,6 +20,9 @@
         <a class="nav-link nav-text" href="/user/registration">Registration</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link nav-text" href="/diner/diner">Add Diners</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link nav-text" href="/menu/menu">Menu</a>
     </li>
     <li class="nav-item">

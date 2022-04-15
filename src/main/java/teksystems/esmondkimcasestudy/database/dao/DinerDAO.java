@@ -13,6 +13,8 @@ import java.util.List;
 @Repository
 public interface DinerDAO extends JpaRepository<Diner, Long> {
 
+    public List<Diner> findAll();
+
     public Diner findById(@Param("id") Integer id);
 
 }

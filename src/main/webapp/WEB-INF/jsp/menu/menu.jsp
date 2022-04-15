@@ -5,26 +5,45 @@
 <body id="menu-body">
 
 <div class="container">
+
+    <h1>Current Diners</h1>
     <div class="col-row-12">
-        <form class="wrapper" action="/diner/submit" method="post">
+        <table class="table">
+            <tr scope="row">
+                <th>Diner Nickname</th>
+                <th>Seat Number</th>
+            </tr>
+            <c:forEach items="${dinerValue}" var="diner">
+                <tr scope="row">
+                    <td>${diner.dinerNickname}</td>
+                    <td>${diner.seatNumber}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div> <!--col-row-12-->
+
+    <h1>Add Dish To Diner's Order</h1>
+    <div class="col-row-12">
+        <form class="wrapper" action="/menu/menuSubmit" method="post">
             <div class="row"><!--registration fields row-->
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="dinerNickname" id="dinerNicknameId" placeholder="Diner Nickname">
-                    <label for="dinerNicknameId">Diner Nickname</label>
+                    <input type="text" class="form-control" name="seatNumberId" id="seatNumberId_Id" placeholder="Diner Seat Number">
+                    <label for="seatNumberId_Id">Diner Seat Number</label>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="seatNumber" id="seatNumberId" placeholder="Seat Number">
-                    <label for="seatNumberId">Seat Number</label>
+                    <input type="number" class="form-control" name="itemId" id="itemId_Id" placeholder="Item Number">
+                    <label for="itemId_Id">Item Id</label>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="creditCard" id="creditCardId" placeholder="Credit Card">
-                    <label for="creditCardId">Credit Card</label>
+                    <input type="text" class="form-control" name="quantity" id="quantityId" placeholder="quantity">
+                    <label for="quantityId">Quantity</label>
                 </div> <!--form-floating mb-3-->
                 <button type="submit">Submit</button>
             </div><!--diners fields row-->
         </form>
     </div> <!--col-row-12-->
 
+    <h1>Menu</h1>
     <div class="col-row-12">
         <table class="table">
             <tr scope="row">
@@ -35,6 +54,7 @@
 
             <c:forEach items="${menuValue}" var="menu">
                 <tr scope="row">
+                    <td>${menu.id}</td>
                     <td>${menu.item}</td>
                     <td>${menu.description}</td>
                     <td>${menu.price}</td>

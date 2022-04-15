@@ -13,7 +13,6 @@ import java.util.Set;
 @Table(name="diners")
 @Getter
 @Setter
-@Data
 public class Diner {
 
     @Id
