@@ -5,17 +5,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO;
 import teksystems.esmondkimcasestudy.database.dao.MenuDAO;
 import teksystems.esmondkimcasestudy.database.dao.DinerDAO;
 import teksystems.esmondkimcasestudy.database.dao.UserDAO;
 
 import teksystems.esmondkimcasestudy.database.entity.Diner;
+import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
 import teksystems.esmondkimcasestudy.database.entity.Menu;
 import teksystems.esmondkimcasestudy.database.entity.User;
+import teksystems.esmondkimcasestudy.formbean.DinerMenuFormBean;
+import teksystems.esmondkimcasestudy.formbean.RegisterFormBean;
 
 
+import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -31,6 +40,9 @@ public class MenuController {
     @Autowired
     private UserDAO UserDAO;
 
+    @Autowired
+    private DinerMenuDAO DinerMenuDAO;
+
     @GetMapping("/menu/menu")
     public ModelAndView getMenu() throws Exception {
         ModelAndView response = new ModelAndView();
@@ -45,25 +57,25 @@ public class MenuController {
 
 
     return response;
-    }
+    }//getMenu()
 
-    @RequestMapping(value="/menu/menuSubmit")
-    public ModelAndView addMenuItemToOrder(@RequestParam Integer productId, String message) throws Exception {
+    @RequestMapping(value = "/menu/menuSubmit", method = { RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView addMenuItemToOrder(@Valid DinerMenuFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String currentPrincipalName = authentication.getName();
-//        log.debug(currentPrincipalName);
+        DinerMenu dinerMenu = new DinerMenu();
 
-        if (authentication.isAuthenticated() ) {
-            String currentPrincipalName = authentication.getName();
-            User loggedInUser = UserDAO.findByEmail(currentPrincipalName);
-            log.debug("Logged in user record = " + loggedInUser);
-        }
+        dinerMenu.setDiner(DinerDAO.findBySeatNumber(form.getSeatNumberId()));
+        dinerMenu.setMenu(MenuDAO.findById(form.getItemId()));
+        dinerMenu.setQuantity(form.getQuantity());
 
-        response.setViewName("menu/menu");
+        DinerMenuDAO.save(dinerMenu);
+        log.info(form.toString());
+
+        response.setViewName("redirect:/menu/menu");
 
         return response;
-    }
+    }//ModelAndView menuSubmit()
+
 
 }//MenuController

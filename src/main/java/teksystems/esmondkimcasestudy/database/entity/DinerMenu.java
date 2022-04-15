@@ -5,13 +5,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "diners_menus")
 @Getter
 @Setter
+@Entity
+@Table(name = "diners_menus")
 public class DinerMenu {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

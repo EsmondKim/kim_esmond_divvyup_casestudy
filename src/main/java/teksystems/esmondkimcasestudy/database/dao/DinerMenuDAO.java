@@ -4,16 +4,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import teksystems.esmondkimcasestudy.database.entity.Diner;
-import teksystems.esmondkimcasestudy.database.entity.Menu;
+import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
 
-import java.awt.*;
 import java.util.List;
 
 @Repository
-public interface MenuDAO extends JpaRepository<Menu, Long> {
+public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
 
-    public List<Menu> findAll();
-
-    public Menu findById(@Param("id") Integer id);
+        public List<DinerMenu> findAll();
 
 }

@@ -17,4 +17,6 @@ public interface DinerDAO extends JpaRepository<Diner, Long> {
 
     public Diner findById(@Param("id") Integer id);
 
+    public Diner findBySeatNumber(@Param("seatNumberId") Integer seatNumberId);
+
 }
