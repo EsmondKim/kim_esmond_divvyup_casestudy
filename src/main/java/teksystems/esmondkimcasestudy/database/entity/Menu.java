@@ -27,7 +27,7 @@ public class Menu {
     private String description;
 
     @Column(name = "price")
-    private Integer price;
+    private Double price;
 
     //One side of ManyToMany Join in the DinerMenu table.
     @OneToMany(mappedBy = "menu")

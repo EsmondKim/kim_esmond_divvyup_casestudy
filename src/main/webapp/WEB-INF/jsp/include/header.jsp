@@ -26,6 +26,9 @@
         <a class="nav-link nav-text" href="/menu/menu">Menu</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link nav-text" href="/tab/tab">The Tab</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link nav-text" href="/login/logout">Logout</a>
     </li>
 </ul><!--Bootstrap Nav-->
