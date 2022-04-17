@@ -29,6 +29,12 @@
         <a class="nav-link nav-text" href="/tab/tab">The Tab</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link nav-text" href="/divvyup/divvyup">The DivvyUp</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav-text" href="/personofthehour/personofthehour">Person of the Hour</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link nav-text" href="/login/logout">Logout</a>
     </li>
 </ul><!--Bootstrap Nav-->
