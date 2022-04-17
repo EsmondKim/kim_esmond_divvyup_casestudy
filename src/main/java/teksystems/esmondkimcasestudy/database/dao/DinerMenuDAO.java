@@ -13,6 +13,6 @@ public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
 
         public List<DinerMenu> findAll();
 
-
+//        public DinerMenu findBySeatNumber(@Param("seatNumber") Integer seatNumber);
 
 }

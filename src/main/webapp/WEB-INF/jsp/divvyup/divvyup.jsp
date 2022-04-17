@@ -22,4 +22,16 @@
         </tr>
         </c:forEach>
 
+        <c:forEach items="${groupedBySeatNumber}" var="groupedBySeatNumber">
+        <tr scope="row">
+            <td>${groupedBySeatNumber}</td>
+        </tr>
+        </c:forEach>
+
+<%--        <c:forEach items="${groupedBySeatNumber}" var="groupedBySeatNumber">--%>
+<%--        <tr scope="row">--%>
+<%--            <td>${groupedBySeatNumber.get(1)}</td>--%>
+<%--        </tr>--%>
+<%--        </c:forEach>--%>
+
 <jsp:include page="../include/footer.jsp"/>
