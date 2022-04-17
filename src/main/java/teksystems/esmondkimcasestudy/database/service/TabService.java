@@ -15,6 +15,7 @@ public class TabService {
 
     @Autowired
     private DinerMenuDAO DinerMenuDAO;
+
     Double subtotal = 0.00;
     Double salesTaxPercentage = 0.03;
     Double salesTaxDollarAmt = 0.00;
@@ -27,19 +28,16 @@ public class TabService {
             Double dishPrice = diner.getMenu().getPrice();
             subtotal = subtotal + dishPrice;
         };
-        System.out.println(subtotal);
         return subtotal;
     }//calculateTabTotal()
 
     public Double calculateSalesTax() {
         salesTaxDollarAmt = salesTaxPercentage * subtotal;
-        System.out.println(salesTaxDollarAmt);
         return salesTaxDollarAmt;
     }//calculateSalesTax()
 
     public Double calculateTabTotal() {
         tabTotal = subtotal + salesTaxDollarAmt;
-        System.out.println(tabTotal);
         return tabTotal;
     }
 
