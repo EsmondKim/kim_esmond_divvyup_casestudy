@@ -30,13 +30,28 @@ public class DivvyUpService {
                 collect(Collectors.groupingBy(d -> d.getDiner().getSeatNumber(), Collectors.toList()));
 
         System.out.println(dinerMenuGroupedBySeatNumber.get(1).get(0).getDiner().getSeatNumber());
+        System.out.println(dinerMenuGroupedBySeatNumber.get(1).get(0).getDiner().getDinerNickname());
         System.out.println(dinerMenuGroupedBySeatNumber.get(2).get(0).getDiner().getSeatNumber());
-
-        dinerMenuGroupedBySeatNumber.forEach((k,v) -> System.out.println("Key = "
-                + k + ", Value = " + v));
+        System.out.println(dinerMenuGroupedBySeatNumber.get(2).get(0).getDiner().getDinerNickname());
+//        dinerMenuGroupedBySeatNumber.forEach((k,v) -> System.out.println("Key = "
+//                + k + ", Value = " + v));
 
         return dinerMenuGroupedBySeatNumber;
-    }//groupByDiner()
+
+        }
+
+        public Object sumByPricePerDiner() {
+
+        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
+
+        Map<Object, Double> dinerMenuSumByPrice =
+                dinerMenu.stream()
+                .collect(Collectors.groupingBy(d -> d.getDiner().getSeatNumber(), Collectors.summingDouble(d -> d.getMenu().getPrice())));
+        System.out.println(dinerMenuSumByPrice);
+
+        return dinerMenuSumByPrice;
+
+    }//sumByPricePerDiner
 
 
 }//DivvyUpService{}

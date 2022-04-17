@@ -31,9 +31,9 @@ public class DivvyUpController {
         List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
         response.addObject("dinerMenu", dinerMenu);
 
-        response.addObject("groupedBySeatNumber", DivvyUpService.groupByDiner());
+        response.addObject("groupByDiner", DivvyUpService.groupByDiner());
 
-//        DivvyUpService.groupByDiner();
+        response.addObject("sumByPricePerDiner", DivvyUpService.sumByPricePerDiner());
 
         return response;
     }//ModelAndView index()
