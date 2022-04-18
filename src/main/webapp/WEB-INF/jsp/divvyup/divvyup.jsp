@@ -49,4 +49,7 @@
         </table>
     </div>
 
+    <div id="seat-tester"></div>
+    <div id="nickname-tester"></div>
+
 <jsp:include page="../include/footer.jsp"/>

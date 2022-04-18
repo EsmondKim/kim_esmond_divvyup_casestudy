@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import teksystems.esmondkimcasestudy.database.service.DivvyUpService;
 
+import java.util.ArrayList;
+
 @Slf4j
 @Controller
 public class AjaxController {
@@ -24,6 +26,12 @@ public class AjaxController {
 
         return new ResponseEntity(DivvyUpService.groupByDiner(), HttpStatus.OK);
     }//ajaxDinerMenuGroupedBySeatNumber
+
+    @RequestMapping(value = "/ajaxGetGroupedDinerDetails", method = RequestMethod.GET)
+    public ResponseEntity<ArrayList> ajaxRequestGroupedDinerDetails() throws Exception {
+
+        return new ResponseEntity(DivvyUpService.getGroupedDinerDetails(), HttpStatus.OK);
+    }//ajaxGetGroupedDinerDetails
 
     @RequestMapping(value = "/ajaxSumByPricePerDiner", method = RequestMethod.GET)
     public ResponseEntity<Double> ajaxRequestSumByPricePerDiner() throws Exception {
