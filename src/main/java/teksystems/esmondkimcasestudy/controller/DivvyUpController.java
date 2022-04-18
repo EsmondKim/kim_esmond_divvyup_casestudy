@@ -16,11 +16,16 @@ import java.util.List;
 @Controller
 public class DivvyUpController {
 
-    @Autowired
+
     private DinerMenuDAO DinerMenuDAO;
 
-    @Autowired
     private DivvyUpService DivvyUpService;
+
+    @Autowired
+    public DivvyUpController(teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO dinerMenuDAO, teksystems.esmondkimcasestudy.database.service.DivvyUpService divvyUpService) {
+        DinerMenuDAO = dinerMenuDAO;
+        DivvyUpService = divvyUpService;
+    }
 
     @RequestMapping(value = "/divvyup/divvyup", method = RequestMethod.GET)
     public ModelAndView getDivvyUp() throws Exception {

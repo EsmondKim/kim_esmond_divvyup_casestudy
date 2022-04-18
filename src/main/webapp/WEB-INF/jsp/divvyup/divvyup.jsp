@@ -49,7 +49,9 @@
         </table>
     </div>
 
-    <div id="seat-tester"></div>
-    <div id="nickname-tester"></div>
+    <div id="name-tester0"></div>
+    <div id="price-tester0"></div>
+    <div id="name-tester1"></div>
+    <div id="price-tester1"></div>
 
 <jsp:include page="../include/footer.jsp"/>
