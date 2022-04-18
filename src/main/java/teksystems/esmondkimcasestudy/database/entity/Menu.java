@@ -1,5 +1,6 @@
 package teksystems.esmondkimcasestudy.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +31,7 @@ public class Menu {
     private Double price;
 
     //One side of ManyToMany Join in the DinerMenu table.
+    @JsonManagedReference
     @OneToMany(mappedBy = "menu")
     private Set<DinerMenu> dinerMenus = new HashSet<DinerMenu>();
 

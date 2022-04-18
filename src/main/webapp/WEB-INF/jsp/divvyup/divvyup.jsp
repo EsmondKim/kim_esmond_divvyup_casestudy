@@ -2,6 +2,8 @@
 <title>Richie M's | The DivvyUp</title>
 <jsp:include page="../include/header.jsp"/>
 
+<script src="../../../public/scripts/divvyupscript.js"></script>
+
 <div class="container">
     <h1>The DivvyUp</h1>
 
