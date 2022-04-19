@@ -29,38 +29,29 @@
         </table>
     </div>
 
-    <div class="col-row-12">
-        <table class="table">
-            <c:forEach items="${groupByDiner}" var="groupByDiner">
-            <tr scope="row">
-                <td>${groupByDiner}</td>
+    <div>
+        <table class="table col-row-6">
+            <thead>
+            <tr>
+                <th scope="col">Diner Name</th>
             </tr>
-            </c:forEach>
+            </thead>
+            <tbody id="tbody-names">
+            </tbody>
+        </table>
+
+        <table class="table col-row-6">
+            <thead>
+            <tr>
+                <th scope="col">Diner Subtotal</th>
+                <th scope="col">Diner Salestax</th>
+                <th scope="col">Diner Total</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-prices">
+
+            </tbody>
         </table>
     </div>
-
-    <div class="col-row-12">
-        <table class="table">
-            <c:forEach items="${sumByPricePerDiner}" var="sumByPricePerDiner">
-            <tr scope="row">
-                <td>${sumByPricePerDiner}</td>
-            </tr>
-            </c:forEach>
-        </table>
-    </div>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Diner Name</th>
-            <th scope="col">Diner Subtotal</th>
-            <th scope="col">Diner Tax</th>
-            <th scope="col">Diner Total</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
 
 <jsp:include page="../include/footer.jsp"/>
