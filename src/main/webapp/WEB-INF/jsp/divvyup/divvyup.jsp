@@ -49,9 +49,18 @@
         </table>
     </div>
 
-    <div id="name-tester0"></div>
-    <div id="price-tester0"></div>
-    <div id="name-tester1"></div>
-    <div id="price-tester1"></div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Diner Name</th>
+            <th scope="col">Diner Subtotal</th>
+            <th scope="col">Diner Tax</th>
+            <th scope="col">Diner Total</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 
 <jsp:include page="../include/footer.jsp"/>

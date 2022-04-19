@@ -1,24 +1,29 @@
 $( document ).ready(function() {
-    $.ajax({
-        url : '/ajaxDinerMenuGroupedByDinerName',
-        type : 'GET',
-        data : {
-            returnedDinerMenuGroupedByDinerName: { },
-        },
-        success : function(data) {
-            console.log("success " + JSON.stringify(data))
-            console.log("After /ajaxDinerMenuGroupedByDinerName")
-            //This is the line where you iterate through the data
-            let nameTester0 = document.getElementById("name-tester0");
-            nameTester0.innerHTML = JSON.stringify(Object.keys(data)[0]);
-            let nameTester1 = document.getElementById("name-tester1");
-            nameTester1.innerHTML = JSON.stringify(Object.keys(data)[1]);
-        },
-        error : function(request,error)
-        {
-            console.log("error = " + JSON.stringify(error) + "  " + JSON.stringify(request));
-        }
-    });//ajaxDinerMenuGroupedBySeatNumber
+
+    let tableDataDinerSubtotal = [];
+    let salesTaxPercentage = 0.03;
+
+    function getAjaxDinerMenuGroupedByDinerName() {
+        return new Promise( (resolve, reject ) => {
+            $.ajax({
+                url : '/ajaxDinerMenuGroupedByDinerName',
+                type : 'GET',
+                data : {
+                    key: 'value',
+                },
+                success : function(data) {
+
+                    console.log("success " + JSON.stringify(data))
+                    resolve(data);
+                },
+                error : function(request,error)
+                {
+                    console.log("error = " + JSON.stringify(error) + "  " + JSON.stringify(request));
+                    reject(error)
+                }
+            })//ajaxDinerMenuGroupedBySeatNumber
+        })//Promise (( resolve, reject) {})
+    }//getAjaxDinerMenuGroupedByDinerName()
 
     $.ajax({
         url : '/ajaxSumByPricePerDiner',
@@ -28,11 +33,10 @@ $( document ).ready(function() {
         },
         success : function(data) {
             console.log("success " + JSON.stringify(data))
-            console.log("After /ajaxSumByPricePerDiner")
-            let priceTester0 = document.getElementById("price-tester0");
-            priceTester0.innerHTML = JSON.stringify(Object.values(data)[0]);
-            let priceTester1 = document.getElementById("price-tester1");
-            priceTester1.innerHTML = JSON.stringify(Object.values(data)[1]);
+
+            Object.keys(data).forEach( subtotal => {
+                tableDataDinerSubtotal.push(data[subtotal]);
+            });
         },
         error : function(request,error)
         {
@@ -57,5 +61,33 @@ $( document ).ready(function() {
         }
     });///ajaxGetDinerMenuDetails
 
+    getAjaxDinerMenuGroupedByDinerName().then((data) => {
+            constructTableDataDinerNameArray(data)
+        }).catch
+        ( (error) => {
+            console.log(error)
+        })
+
+    function constructTableDataDinerNameArray(data) {
+        let tableDataDinerName = [];
+        Object.keys(data).forEach( name => {
+            tableDataDinerName.push(name);
+        });
+
+        console.log("Inside the function", tableDataDinerName);
+
+
+    console.log("Outside the function", tableDataDinerName);
+
+    for (let i = 0; i <tableDataDinerName.length; i++) {
+        console.log("You're in the loop", tableDataDinerName[i], tableDataDinerSubtotal[i])
+        $("tbody").append("<tr>");
+        $("tbody").append(`<td>${tableDataDinerName[i]}</td>`);
+        $("tbody").append(`<td>${tableDataDinerSubtotal[i]}</td>`);
+        $("tbody").append(`<td>${tableDataDinerSubtotal[i] * salesTaxPercentage}</td>`);
+        $("tbody").append(`<td>${tableDataDinerSubtotal[i] * salesTaxPercentage + tableDataDinerSubtotal[i] }</td>`);
+        $("tbody").append("</tr>");
+    }//for loop
+    }//constructTableDataDinerNameArray(data)
 
 });// (document).ready(function() { })
