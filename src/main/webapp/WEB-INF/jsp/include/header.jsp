@@ -1,3 +1,5 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
 
 <ul class="nav nav-tabs"><!--Bootstrap Nav-->
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/index">Sign In</a>
+        <a class="nav-link active" aria-current="page" href="/index">Richie M's Restaurant</a>
     </li>
     <li class="nav-item">
         <a class="nav-link nav-text" href="/user/registration">Registration</a>
@@ -34,7 +36,17 @@
     <li class="nav-item">
         <a class="nav-link nav-text" href="/personofthehour/personofthehour">Person of the Hour</a>
     </li>
+
+    <sec:authorize access="!isAuthenticated()">
+    <li class="nav-item">
+        <a class="nav-link nav-text" href="/login/login">Login</a>
+    </li>
+    </sec:authorize>
+
+    <sec:authorize access="isAuthenticated()">
     <li class="nav-item">
         <a class="nav-link nav-text" href="/login/logout">Logout</a>
     </li>
+    <sec:authentication property="principal.username" />
+    </sec:authorize>
 </ul><!--Bootstrap Nav-->
