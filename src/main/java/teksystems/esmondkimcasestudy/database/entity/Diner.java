@@ -1,10 +1,8 @@
 package teksystems.esmondkimcasestudy.database.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.util.HashSet;

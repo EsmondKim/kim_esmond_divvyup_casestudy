@@ -14,10 +14,16 @@
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="dinerNickname" id="dinerNicknameId" placeholder="Diner Nickname">
                     <label for="dinerNicknameId">Diner Nickname</label>
+                    <c:forEach items='${bindingResult.getFieldErrors("dinerNickname")}' var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="seatNumber" id="seatNumberId" placeholder="Seat Number">
+                    <input type="number" class="form-control" name="seatNumber" id="seatNumberId" placeholder="Seat Number" value=${form.seatNumber}>
                     <label for="seatNumberId">Seat Number</label>
+                    <c:forEach items='${bindingResult.getFieldErrors("seatNumber")}' var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="creditCard" id="creditCardId" placeholder="Credit Card">

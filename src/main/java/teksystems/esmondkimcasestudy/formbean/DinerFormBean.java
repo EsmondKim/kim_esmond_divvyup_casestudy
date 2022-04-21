@@ -3,9 +3,10 @@ package teksystems.esmondkimcasestudy.formbean;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import teksystems.esmondkimcasestudy.validation.SeatNumberUnique;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -17,14 +18,10 @@ public class DinerFormBean {
     @NotBlank(message = "A diner nickname is required.")
     private String dinerNickname;
 
-    @NotBlank(message = "You must assign a seatnumber.")
-    @Pattern(regexp = "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}", message = "You must enter a number.")
+    @NotNull(message = "You must assign a seat number.")
+    @SeatNumberUnique(message = "This seat number already exists at this table.")
     private Integer seatNumber;
 
     private String creditCard;
-
-//    private String status;
-
-//    private String userId;
 
 }

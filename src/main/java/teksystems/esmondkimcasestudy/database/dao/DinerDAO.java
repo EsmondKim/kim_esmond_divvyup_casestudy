@@ -1,14 +1,14 @@
 package teksystems.esmondkimcasestudy.database.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import teksystems.esmondkimcasestudy.database.entity.Diner;
-import teksystems.esmondkimcasestudy.database.entity.Menu;
-import teksystems.esmondkimcasestudy.database.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface DinerDAO extends JpaRepository<Diner, Long> {
@@ -18,5 +18,10 @@ public interface DinerDAO extends JpaRepository<Diner, Long> {
     public Diner findById(@Param("id") Integer id);
 
     public Diner findBySeatNumber(@Param("seatNumberId") Integer seatNumberId);
+
+    public Diner deleteDinerById(@Param("dinerId") Integer dinerId);
+
+    @Query(value=" select seat_number as sn from diners as d;", nativeQuery = true)
+    List<ArrayList> getSeatNumberArrayList();
 
 }

@@ -22,18 +22,9 @@ public class IndexController {
     public ModelAndView index() throws Exception {
         ModelAndView response = new ModelAndView();
 
-        List<User> firstName = userDAO.findByFirstName("Eric");
-        List<User> firstLetter = userDAO.findByFirstNameIgnoreCaseContaining("E");
-
-        for( User name : firstName ) {
-            log.info(name.toString());
-        }
-
-        for( User name : firstLetter ) {
-            log.info(name.toString());
-        }
-
-        response.setViewName("index");
+        // log.debug("lombok logging at debug level");
+        log.info("lombok logging at info level");
+        log.warn("lombok logging at info level");
 
         return response;
     }//ModelAndView index()
