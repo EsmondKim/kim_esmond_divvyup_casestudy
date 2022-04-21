@@ -1,6 +1,7 @@
 package teksystems.esmondkimcasestudy.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,6 +25,7 @@ import teksystems.esmondkimcasestudy.formbean.RegisterFormBean;
 
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,9 +38,6 @@ public class MenuController {
 
     @Autowired
     private DinerDAO DinerDAO;
-
-    @Autowired
-    private UserDAO UserDAO;
 
     @Autowired
     private DinerMenuDAO DinerMenuDAO;
@@ -76,6 +75,22 @@ public class MenuController {
 
         return response;
     }//ModelAndView menuSubmit()
+
+    @GetMapping("/menu/search")
+    public ModelAndView search(@RequestParam(name = "item", required = false) String item) {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("menu/menu");
+
+        List<Menu> items;
+
+        items = MenuDAO.findMenuByItemContaining(item);
+
+        log.info(String.valueOf(items.get(0).getItem()));
+
+        response.addObject("items", items);
+
+        return response;
+    }
 
 
 }//MenuController

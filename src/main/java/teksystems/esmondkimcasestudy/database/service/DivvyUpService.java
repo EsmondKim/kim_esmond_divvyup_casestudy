@@ -29,24 +29,25 @@ public class DivvyUpService {
 
     public Object groupByDiner() {
 
-            List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
+        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
 
-            Map<Object, List<DinerMenu>> dinerMenuGroupedByDinerName =
+        Map<Object, List<DinerMenu>> dinerMenuGroupedByDinerName =
                 dinerMenu.stream().
-                collect(Collectors.groupingBy(d -> d.getDiner().getDinerNickname(), Collectors.toList()));
+                        collect(Collectors.groupingBy(d -> d.getDiner().getDinerNickname(), Collectors.toList()));
 
-            return dinerMenuGroupedByDinerName;
-        }//groupedByDiner
+        return dinerMenuGroupedByDinerName;
+    }//groupedByDiner
 
-        public Object sumByPricePerDiner() {
+    public Object sumByPricePerDiner() {
 
-            List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
+        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
 
-            Map<Object, Double> dinerMenuSumByPrice =
-                    dinerMenu.stream()
-                            .collect(Collectors.groupingBy(d -> d.getDiner().getSeatNumber(), Collectors.summingDouble(d -> d.getMenu().getPrice())));
+        Map<Object, Double> dinerMenuSumByPrice =
+                dinerMenu.stream()
+                        .collect(Collectors.groupingBy(d -> d.getDiner().getSeatNumber(), Collectors.summingDouble(d -> d.getMenu().getPrice())));
 
-            return dinerMenuSumByPrice;
+        return dinerMenuSumByPrice;
+
 
     }//sumByPricePerDiner
 
