@@ -21,7 +21,4 @@ public interface DinerDAO extends JpaRepository<Diner, Long> {
 
     public Diner deleteDinerById(@Param("dinerId") Integer dinerId);
 
-    @Query(value=" select seat_number as sn from diners as d;", nativeQuery = true)
-    List<ArrayList> getSeatNumberArrayList();
-
 }

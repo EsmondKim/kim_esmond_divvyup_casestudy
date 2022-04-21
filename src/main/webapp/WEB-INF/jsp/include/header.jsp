@@ -37,6 +37,12 @@
         <a class="nav-link nav-text" href="/personofthehour/personofthehour">Person of the Hour</a>
     </li>
 
+    <sec:authorize access = "hasAuthority('ADMIN')">
+    <li class="nav-item">
+        <a class="nav-link nav-text" href="/additem/additem">Add Item To Menu</a>
+    </li>
+    </sec:authorize>
+
     <sec:authorize access="!isAuthenticated()">
     <li class="nav-item">
         <a class="nav-link nav-text" href="/login/login">Login</a>

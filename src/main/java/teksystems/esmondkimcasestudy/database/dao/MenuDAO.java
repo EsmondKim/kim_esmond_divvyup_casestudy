@@ -5,7 +5,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import teksystems.esmondkimcasestudy.database.entity.Menu;
 
-import javax.persistence.NamedQuery;
 import java.util.List;
 
 @Repository
