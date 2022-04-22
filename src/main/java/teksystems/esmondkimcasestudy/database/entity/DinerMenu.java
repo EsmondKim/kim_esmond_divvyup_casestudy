@@ -18,13 +18,13 @@ public class DinerMenu {
 
     //The OneToMany from the Diner class
     @JsonBackReference
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "seat_number_id")
     private Diner diner;
 
     //The OneToMany from the Menu class
     @JsonBackReference
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "item_id")
     private Menu menu;
 

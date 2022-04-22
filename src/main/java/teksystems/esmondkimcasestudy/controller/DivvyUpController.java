@@ -6,10 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import teksystems.esmondkimcasestudy.database.dao.DinerDAO;
 import teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO;
 import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
 import teksystems.esmondkimcasestudy.database.service.DivvyUpService;
 
+import javax.transaction.Transactional;
 import javax.websocket.server.PathParam;
 import java.util.List;
 
@@ -41,6 +43,7 @@ public class DivvyUpController {
         return response;
     }//ModelAndView index()
 
+    @Transactional
     @RequestMapping(value = "/divvyup/deleteorder", method = RequestMethod.GET)
     public ModelAndView delete(@PathParam("id") Integer id) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -48,11 +51,12 @@ public class DivvyUpController {
         response.setViewName("divvyup/divvyup");
 
         System.out.println(id);
+
         DinerMenuDAO.deleteById(id);
 
         return response;
 
-    }//ModelAndView index()
+    }//delete()
 
 }//DivvyUp Controller {}
 

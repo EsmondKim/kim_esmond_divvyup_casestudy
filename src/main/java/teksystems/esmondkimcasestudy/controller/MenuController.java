@@ -69,7 +69,6 @@ public class MenuController {
         dinerMenu.setQuantity(form.getQuantity());
 
         DinerMenuDAO.save(dinerMenu);
-        log.info(form.toString());
 
         response.setViewName("redirect:/menu/menu");
 

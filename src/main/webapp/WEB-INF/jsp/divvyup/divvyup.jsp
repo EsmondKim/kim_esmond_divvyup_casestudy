@@ -42,8 +42,6 @@
                 <td>${dinerMenu.getMenu().getPrice()}</td>
                 <td>${dinerMenu.getDiner().getSeatNumber()}</td>
                 <td>${dinerMenu.getDiner().getDinerNickname()}</td>
-                <td><input type='checkbox' id="delete-checkbox">
-                <td><button type="button" class="btn btn-warning" onclick="deleteRow(${dinerMenu.getId()})" value="/divvyup/deleteorder">Delete</button></td>
             </tr>
             </c:forEach>
         </table>
@@ -54,6 +52,7 @@
                         console.log("click", id)
                         $.ajax({
                             url: "/divvyup/deleteorder",
+                            data: {id: id },
                         })
                     }
                 }
