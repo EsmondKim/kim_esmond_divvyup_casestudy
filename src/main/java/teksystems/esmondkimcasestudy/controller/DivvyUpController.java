@@ -47,6 +47,7 @@ public class DivvyUpController {
 
         response.setViewName("divvyup/divvyup");
 
+        System.out.println(id);
         DinerMenuDAO.deleteById(id);
 
         return response;
