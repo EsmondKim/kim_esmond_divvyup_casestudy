@@ -14,10 +14,14 @@ public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
 
         public List<DinerMenu> findAll();
 
+        public Long deleteById(Integer id);
+
         @Query(value="select seat_number, diner_nickname, item, quantity, price, credit_card\n" +
                 "from diners as d, menus as m, diners_menus as dm\n" +
                 "where seat_number_id = d.id and item_id = m.id\n" +
                 "order by seat_number; ", nativeQuery = true)
         List<Map<String, Object>> getDinerMenuDetails();
+
+
 
 }

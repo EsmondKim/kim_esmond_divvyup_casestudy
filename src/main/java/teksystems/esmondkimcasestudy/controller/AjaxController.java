@@ -47,4 +47,5 @@ public class AjaxController {
         return new ResponseEntity(DinerMenuDAO.getDinerMenuDetails(), HttpStatus.OK);
     }//ajaxSumByPricePerDiner
 
+
 }//Ajax Controller {}

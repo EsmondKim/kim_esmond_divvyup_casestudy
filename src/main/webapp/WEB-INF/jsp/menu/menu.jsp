@@ -31,8 +31,12 @@
                     <label for="seatNumberId_Id">Diner Seat Number</label>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="itemId" id="itemId_Id" placeholder="Item Number">
-                    <label for="itemId_Id">Item Id</label>
+                    <label for="itemId_Id">Choose a menu item:</label>
+                    <select type="number" name="itemId" id="itemId_Id">
+                        <c:forEach items="${menuValue}" var="menu">
+                            <option value=${menu.id}>${menu.item}</option>
+                        </c:forEach>
+                    </select>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="quantity" id="quantityId" placeholder="quantity">

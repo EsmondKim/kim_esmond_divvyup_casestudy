@@ -10,6 +10,7 @@ import teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO;
 import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
 import teksystems.esmondkimcasestudy.database.service.DivvyUpService;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @Slf4j
@@ -38,6 +39,18 @@ public class DivvyUpController {
         response.addObject("dinerMenu", dinerMenu);
 
         return response;
+    }//ModelAndView index()
+
+    @RequestMapping(value = "/divvyup/deleteorder", method = RequestMethod.GET)
+    public ModelAndView delete(@PathParam("id") Integer id) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        response.setViewName("divvyup/divvyup");
+
+        DinerMenuDAO.deleteById(id);
+
+        return response;
+
     }//ModelAndView index()
 
 }//DivvyUp Controller {}
