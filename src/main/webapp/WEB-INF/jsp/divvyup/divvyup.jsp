@@ -17,16 +17,27 @@
                 <th>Diner</th>
             </tr>
 
-            <c:forEach items="${dinerMenu}" var="dinerMenu">
+            <c:forEach items="${dinerMenu}" var="dinerMenu" varStatus="loop">
             <tr scope="row">
                 <td>${dinerMenu.getMenu().getItem()}</td>
                 <td>${dinerMenu.getQuantity()}</td>
                 <td>${dinerMenu.getMenu().getPrice()}</td>
                 <td>${dinerMenu.getDiner().getSeatNumber()}</td>
                 <td>${dinerMenu.getDiner().getDinerNickname()}</td>
+                <td><input type='checkbox' id="delete-checkbox">
+                <td><button type="button" class="btn btn-warning" onclick="deleteRow(${dinerMenu.getId()})">Delete</button></td>
             </tr>
             </c:forEach>
         </table>
+        <script type="text/javascript">
+
+            deleteRow = (id) => {
+                const cb = document.querySelector('#delete-checkbox');
+                if (cb.checked) {
+                    console.log("click", id)
+                }
+            }
+        </script>
     </div>
 
     <div>

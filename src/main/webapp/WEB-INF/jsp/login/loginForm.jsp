@@ -15,13 +15,14 @@
             </div> <!--form-floating mb-3-->
             <br>
             <div class="form-floating">
-                Password : <input type="password" class="form-control" id="signInPassword" name="password" placeholder="password">
+                Password : <input type="password" class="form-control" id="signInPassword" name="password" placeholder="password" value="${form.password}">
                 <label for="signInPassword">Password</label>
             <br>
             </div> <!--form-floating mb-3-->
             <button type="submit">Submit</button>
         </div> <!--col-row-12-->
     </form>
+
 
 
 <jsp:include page="../include/footer.jsp"/>

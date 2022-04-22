@@ -34,6 +34,7 @@ public class DivvyUpController {
         response.setViewName("divvyup/divvyup");
 
         List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
+        System.out.println(dinerMenu.get(0).getId());
         response.addObject("dinerMenu", dinerMenu);
 
         return response;
