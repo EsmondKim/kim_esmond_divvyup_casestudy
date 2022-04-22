@@ -22,7 +22,7 @@
 <label for="dark-mode">Toggle dark mode</label><br>
 
 <div class="container">
-<body>
+
     <h1>The DivvyUp</h1>
 
     <div class="col-row-12">
@@ -35,9 +35,9 @@
                 <th>Diner</th>
             </tr>
 
-            <c:forEach items="${dinerMenu}" var="dinerMenu" varStatus="loop">
+            <c:forEach items="${dinerMenu}" var="dinerMenu">
             <tr scope="row">
-                <tdIn>${dinerMenu.getMenu().getItem()}</tdIn>
+                <td>${dinerMenu.getMenu().getItem()}</td>
                 <td>${dinerMenu.getQuantity()}</td>
                 <td>${dinerMenu.getMenu().getPrice()}</td>
                 <td>${dinerMenu.getDiner().getSeatNumber()}</td>
