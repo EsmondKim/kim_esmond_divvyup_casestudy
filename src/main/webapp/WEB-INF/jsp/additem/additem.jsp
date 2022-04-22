@@ -19,7 +19,7 @@
                     <label for="descriptionId">Description</label>
                 </div> <!--form-floating mb-3-->
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="price" id="priceId" placeholder="Price" value=${form.price}>
+                    <input type="double" class="form-control" name="price" id="priceId" placeholder="Price" value=${form.price}>
                     <label for="priceId">Price</label>
                 </div> <!--form-floating mb-3-->
                 <button type="submit">Submit</button>

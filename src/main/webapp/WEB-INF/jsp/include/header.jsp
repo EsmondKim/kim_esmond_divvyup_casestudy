@@ -36,6 +36,9 @@
     <li class="nav-item">
         <a class="nav-link nav-text" href="/personofthehour/personofthehour">Person of the Hour</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link nav-text" href="/menusearch/menusearch">Menu Search</a>
+    </li>
 
     <sec:authorize access = "hasAuthority('ADMIN')">
     <li class="nav-item">

@@ -76,21 +76,5 @@ public class MenuController {
         return response;
     }//ModelAndView menuSubmit()
 
-    @GetMapping("/menu/search")
-    public ModelAndView search(@RequestParam(name = "item", required = false) String item) {
-        ModelAndView response = new ModelAndView();
-        response.setViewName("menu/menu");
-
-        List<Menu> items;
-
-        items = MenuDAO.findMenuByItemContaining(item);
-
-        log.info(String.valueOf(items.get(0).getItem()));
-
-        response.addObject("items", items);
-
-        return response;
-    }
-
 
 }//MenuController
