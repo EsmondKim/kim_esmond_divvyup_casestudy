@@ -22,7 +22,6 @@
                 <td>${user.getLastName()}</td>
                 <td>${user.getEmail()}</td>
                 <td id="user-sql-id_${loop.index}">${user.getId()}</td>
-                <td><input type='checkbox' id="delete-checkbox">
                 <td><button type="button" class="btn btn-warning" id="delete-btn_${loop.index}">Delete</button></td>
             </tr>
             </c:forEach>

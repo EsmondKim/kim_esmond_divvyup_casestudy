@@ -3,23 +3,6 @@
 <jsp:include page="../include/header.jsp"/>
 
 <script src="../../../public/scripts/divvyupscript.js"></script>
-<style>
-    .dark-mode {
-    color: white; !important;
-    background-color: gray;
-    }
-</style>
-
-<script>
-    function darkMode() {
-        console.log("dark mode")
-        let element = document.body;
-        element.classList.toggle("dark-mode");
-    }
-</script>
-
-<input type="radio" id="dark-mode" name="dark-mode-radio" value="HTML" onclick="darkMode()">
-<label for="dark-mode">Toggle dark mode</label><br>
 
 <div class="container">
 
@@ -45,18 +28,6 @@
             </tr>
             </c:forEach>
         </table>
-        <script type="text/javascript">
-           deleteRow = (id) => {
-                    const cb = document.querySelector('#delete-checkbox');
-                    if (cb.checked) {
-                        console.log("click", id)
-                        $.ajax({
-                            url: "/divvyup/deleteorder",
-                            data: {id: id },
-                        })
-                    }
-                }
-        </script>
     </div>
 
     <div>

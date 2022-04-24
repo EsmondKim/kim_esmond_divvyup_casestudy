@@ -9,7 +9,7 @@ $( document ).ready(function() {
                     key: 'value',
                 },
                 success : function(data) {
-                    console.log("success " + JSON.stringify(data))
+                    // console.log("success " + JSON.stringify(data))
                     resolve(data);
                     return data;
                 },
@@ -31,7 +31,7 @@ $( document ).ready(function() {
                         'returnedPricesPerDiner': [ ],
                     },
                 success : function(data) {
-                    console.log("success " + JSON.stringify(data))
+                    // console.log("success " + JSON.stringify(data))
                     resolve(data);
                     return data;
                 },
@@ -51,7 +51,7 @@ $( document ).ready(function() {
             'returnedDinerMenuDetails': [ ],
         },
         success : function(data) {
-            console.log("success " + JSON.stringify(data))
+            // console.log("success " + JSON.stringify(data))
             // render logic here
         },
         error : function(request,error)

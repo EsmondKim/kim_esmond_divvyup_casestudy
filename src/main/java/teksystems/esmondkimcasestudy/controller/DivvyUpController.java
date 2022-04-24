@@ -43,20 +43,5 @@ public class DivvyUpController {
         return response;
     }//ModelAndView index()
 
-    @Transactional
-    @RequestMapping(value = "/divvyup/deleteorder", method = RequestMethod.GET)
-    public ModelAndView delete(@PathParam("id") Integer id) throws Exception {
-        ModelAndView response = new ModelAndView();
-
-        response.setViewName("divvyup/divvyup");
-
-        System.out.println(id);
-
-        DinerMenuDAO.deleteById(id);
-
-        return response;
-
-    }//delete()
-
 }//DivvyUp Controller {}
 

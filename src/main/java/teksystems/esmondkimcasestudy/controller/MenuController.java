@@ -49,7 +49,6 @@ public class MenuController {
 
         List<Diner> diner = DinerDAO.findAll();
         response.addObject("dinerValue", diner);
-        log.info(String.valueOf(diner));
 
         List<Menu> menu = MenuDAO.findAll();
         response.addObject("menuValue", menu);
