@@ -30,28 +30,23 @@
         </table>
     </div>
 
-    <div>
-        <table class="table col-row-6">
-            <thead>
-            <tr>
-                <th scope="col">Diner Name</th>
+    <div class="col-row-12">
+        <table class="table">
+            <tr scope="row">
+                <th>Diner</th>
+                <th>Diner's Subtotal</th>
+                <th>Diner's Salestax</th>
+                <th>Diner's Total</th>
             </tr>
-            </thead>
-            <tbody id="tbody-names">
-            </tbody>
-        </table>
 
-        <table class="table col-row-6">
-            <thead>
-            <tr>
-                <th scope="col">Diner Subtotal</th>
-                <th scope="col">Diner Salestax</th>
-                <th scope="col">Diner Total</th>
-            </tr>
-            </thead>
-            <tbody id="tbody-prices">
-
-            </tbody>
+            <c:forEach items="${divvyUpTaxAndTotalRows}" var="divvyUpTaxAndTotalRow">
+                <tr scope="row">
+                    <td>${divvyUpTaxAndTotalRow.diner_nickname}</td>
+                    <td>${divvyUpTaxAndTotalRow.subtotal}</td>
+                    <td>${divvyUpTaxAndTotalRow.salestax}</td>
+                    <td>${divvyUpTaxAndTotalRow.total}</td>
+                </tr>
+            </c:forEach>
         </table>
     </div>
 

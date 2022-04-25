@@ -6,13 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import teksystems.esmondkimcasestudy.database.dao.DinerDAO;
 import teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO;
-import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
-import teksystems.esmondkimcasestudy.database.service.DivvyUpService;
 
-import javax.transaction.Transactional;
-import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.Map;
 
@@ -23,12 +18,9 @@ public class DivvyUpController {
 
     private DinerMenuDAO DinerMenuDAO;
 
-    private DivvyUpService DivvyUpService;
-
     @Autowired
-    public DivvyUpController(teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO dinerMenuDAO, teksystems.esmondkimcasestudy.database.service.DivvyUpService divvyUpService) {
+    public DivvyUpController(teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO dinerMenuDAO) {
         DinerMenuDAO = dinerMenuDAO;
-        DivvyUpService = divvyUpService;
     }
 
     @RequestMapping(value = "/divvyup/divvyup", method = RequestMethod.GET)
@@ -39,6 +31,9 @@ public class DivvyUpController {
 
         List<Map<String, Object>> divvyUpRows = DinerMenuDAO.getDivvyUpRows();
         response.addObject("divvyUpRows", divvyUpRows);
+
+        List<Map<String, Object>> divvyUpTaxAndTotalRows = DinerMenuDAO.getDivvyUpTaxAndTotalRows();
+        response.addObject("divvyUpTaxAndTotalRows", divvyUpTaxAndTotalRows);
 
         return response;
     }//ModelAndView index()
