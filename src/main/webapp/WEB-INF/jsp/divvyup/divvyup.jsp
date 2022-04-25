@@ -38,6 +38,9 @@
                 <th>Diner's Salestax</th>
                 <th>Diner's Total</th>
             </tr>
+            <tr scope="row">
+                <p>The Totals Below Include Salestax But No Gratuity</p>
+            </tr>
 
             <c:forEach items="${divvyUpTaxAndTotalRows}" var="divvyUpTaxAndTotalRow">
                 <tr scope="row">

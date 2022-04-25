@@ -32,6 +32,7 @@
     <table class="table">
         <tr scope="row">
             <td><h1>New Totals After Splitting POTH's Tab</h1></td>
+            <td><p>*The Amounts Added Below Include The POTH-Diner's Salestax but no gratuity.</p></td>
         </tr>
         <tr scope="row">
             <th>Diner</th>
@@ -93,9 +94,6 @@
             newTotalsArr.push(newTotal);
         })
         console.log("this is the final newTotalArr", newTotalsArr);
-        if (indexToRemove > -1) {
-            totalsArr.splice(indexToRemove, 1);
-        }
 
         dinerNamesArr = [];
         let dinerNames = document.getElementsByClassName("diner-names");
@@ -108,9 +106,11 @@
         }
         console.log("dinerNamesArr post slice", dinerNamesArr);
 
-
+        console.log("dinerNames len", dinerNamesArr.length);
+        console.log("this is totals array immediately before forLoop", totalsArr);
+        console.log("totalsArr len",totalsArr.length);
         function loadPOTHTableAfterSplit() {
-            for (let i=0; i<dinerNames.length; i++) {
+            for (let i=0; i<dinerNames.length-1; i++) {
                 let dinerName = dinerNamesArr[i];
                 let originalTotal = totalsArr[i];
                 let addAmt = splitAmt;
