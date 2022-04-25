@@ -30,6 +30,11 @@ public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
                 "order by seat_number; ", nativeQuery = true)
         List<Map<String, Object>> getDinerMenuDetails();
 
+        @Query(value="select item as 'item', quantity as 'quantity', price as 'price', (price * quantity) as 'total', diner_nickname as 'diner_nickname'\n" +
+                "from menus as m, diners_menus as dm, diners as d\n" +
+                "where m.id = dm.item_id and d.id = dm.seat_number_id", nativeQuery = true)
+        List<Map<String, Object>> getDivvyUpRows();
+
 //        select p.id as product_id, p.name, p.price, op.quantity, o.id as order_id, (price * quantity) as total
 //        from products p, order_products op, orders o
 //        where p.id = op.product_id and o.id = op.order_id

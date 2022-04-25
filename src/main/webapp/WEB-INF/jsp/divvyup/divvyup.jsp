@@ -14,17 +14,17 @@
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Seat ID</th>
+                <th>Total</th>
                 <th>Diner</th>
             </tr>
 
-            <c:forEach items="${dinerMenu}" var="dinerMenu">
+            <c:forEach items="${divvyUpRows}" var="divvyUpRow">
             <tr scope="row">
-                <td>${dinerMenu.getMenu().getItem()}</td>
-                <td>${dinerMenu.getQuantity()}</td>
-                <td>${dinerMenu.getMenu().getPrice()}</td>
-                <td>${dinerMenu.getDiner().getSeatNumber()}</td>
-                <td>${dinerMenu.getDiner().getDinerNickname()}</td>
+                <td>${divvyUpRow.item}</td>
+                <td>${divvyUpRow.quantity}</td>
+                <td>${divvyUpRow.price}</td>
+                <td>${divvyUpRow.total}</td>
+                <td>${divvyUpRow.diner_nickname}</td>
             </tr>
             </c:forEach>
         </table>

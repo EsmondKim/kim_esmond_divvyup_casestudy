@@ -14,6 +14,7 @@ import teksystems.esmondkimcasestudy.database.service.DivvyUpService;
 import javax.transaction.Transactional;
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -36,9 +37,8 @@ public class DivvyUpController {
 
         response.setViewName("divvyup/divvyup");
 
-        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
-        System.out.println(dinerMenu.get(0).getId());
-        response.addObject("dinerMenu", dinerMenu);
+        List<Map<String, Object>> divvyUpRows = DinerMenuDAO.getDivvyUpRows();
+        response.addObject("divvyUpRows", divvyUpRows);
 
         return response;
     }//ModelAndView index()
