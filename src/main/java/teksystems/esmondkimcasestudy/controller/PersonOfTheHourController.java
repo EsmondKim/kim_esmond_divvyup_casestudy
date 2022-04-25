@@ -6,10 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import teksystems.esmondkimcasestudy.database.dao.DinerMenuDAO;
-import teksystems.esmondkimcasestudy.database.entity.DinerMenu;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -23,8 +22,8 @@ public class PersonOfTheHourController {
 
         response.setViewName("personofthehour/personofthehour");
 
-        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
-        response.addObject("dinerMenu", dinerMenu);
+        List<Map<String, Object>> divvyUpTaxAndTotalRows = DinerMenuDAO.getDivvyUpTaxAndTotalRows();
+        response.addObject("divvyUpTaxAndTotalRows", divvyUpTaxAndTotalRows);
 
         return response;
     }//

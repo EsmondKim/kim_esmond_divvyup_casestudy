@@ -25,9 +25,6 @@ public class Diner {
     @Column(name = "seat_number")
     private Integer seatNumber;
 
-    @Column(name = "credit_card")
-    private String creditCard;
-
     //Many diners can have one user (server) in this ManyToOne from the users table.
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id")

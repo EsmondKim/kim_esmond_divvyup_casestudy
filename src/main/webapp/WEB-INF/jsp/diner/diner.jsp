@@ -25,10 +25,6 @@
                         <div style="color:red;">${error.getDefaultMessage()}</div>
                     </c:forEach>
                 </div> <!--form-floating mb-3-->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="creditCard" id="creditCardId" placeholder="Credit Card">
-                    <label for="creditCardId">Credit Card</label>
-                </div> <!--form-floating mb-3-->
                 <button type="submit">Submit</button>
             </div><!--diners fields row-->
         </form>

@@ -44,7 +44,6 @@ public class DinerTest {
 
         expected.setDinerNickname("test");
         expected.setSeatNumber(99);
-        expected.setCreditCard("test");
         expected.setUser(UserDAO.findById(1));
 
         DinerDAO.save(expected);

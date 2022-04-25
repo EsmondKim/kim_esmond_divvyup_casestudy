@@ -36,7 +36,7 @@
                 function clickHandler(e) {
                 let buttonId = e.target.getAttribute('id');
                 let rowId = buttonId.split("_")[1];
-                let sqlId = document.querySelector(`#user-sql-id_\${rowId}`).textContent
+                let sqlId = document.querySelector(`#user-sql-id_\${rowId}`).textContent;
 
                 $.ajax({
                     url: "/user/deleteuser",

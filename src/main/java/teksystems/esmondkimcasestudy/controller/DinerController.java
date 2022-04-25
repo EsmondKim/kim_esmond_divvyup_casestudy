@@ -65,7 +65,6 @@ public class DinerController {
 
         diner.setDinerNickname(form.getDinerNickname());
         diner.setSeatNumber(form.getSeatNumber());
-        diner.setCreditCard(form.getCreditCard());
         diner.setUser(loggedInUser);
 
         DinerDAO.save(diner);

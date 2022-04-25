@@ -22,6 +22,4 @@ public class DinerFormBean {
     @SeatNumberUnique(message = "This seat number already exists at this table.")
     private Integer seatNumber;
 
-    private String creditCard;
-
 }
