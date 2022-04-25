@@ -14,6 +14,7 @@ import teksystems.esmondkimcasestudy.database.entity.Menu;
 import teksystems.esmondkimcasestudy.database.service.TabService;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -31,12 +32,12 @@ public class TabController {
 
         response.setViewName("tab/tab");
 
-        List<DinerMenu> dinerMenu = DinerMenuDAO.findAll();
-        response.addObject("dinerMenu", dinerMenu);
+        List<Map<String, Object>> tabRows = DinerMenuDAO.getItemQuantityPriceTotal();
+        response.addObject("tabRows", tabRows);
 
-        response.addObject("subtotal", TabService.calculateTabSubtotal());
-        response.addObject("salesTax", TabService.calculateSalesTax());
-        response.addObject("tabTotal", TabService.calculateTabTotal());
+        List<Map<String, Object>> taxAndTotalRows = DinerMenuDAO.getTotalsAndTaxes();
+        response.addObject("taxAndTotalRows", taxAndTotalRows);
+
 
         return response;
     }//ModelAndView index()

@@ -43,10 +43,8 @@ public class DinerController {
     public ModelAndView dinerSubmit(@Valid DinerFormBean form,  BindingResult bindingResult) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
-        log.debug(currentPrincipalName);
 
         User loggedInUser = UserDAO.findByEmail(currentPrincipalName);
-        log.debug("Logged in user record = " + loggedInUser);
 
         ModelAndView response =new ModelAndView();
 
@@ -69,8 +67,7 @@ public class DinerController {
         diner.setSeatNumber(form.getSeatNumber());
         diner.setCreditCard(form.getCreditCard());
         diner.setUser(loggedInUser);
-        log.info(String.valueOf(form));
-        log.info(String.valueOf(diner));
+
         DinerDAO.save(diner);
 
         response.setViewName("redirect:/menu/menu");
