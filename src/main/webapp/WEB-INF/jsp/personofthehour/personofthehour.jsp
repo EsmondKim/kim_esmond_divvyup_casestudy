@@ -11,7 +11,7 @@
             <th>Diner's Subtotal</th>
             <th>Diner's Salestax</th>
             <th>Diner's Total</th>
-            <th>Remove and Split Among Diners</th>
+            <th id="remove-header">Remove and Split Among Diners</th>
         </tr>
 
 
@@ -27,6 +27,24 @@
     </table>
 </div>
 
+
+<div class="col-row-12">
+    <table class="table">
+        <tr scope="row">
+            <td><h1>New Totals After Splitting POTH's Tab</h1></td>
+        </tr>
+        <tr scope="row">
+            <th>Diner</th>
+            <th>Original Total</th>
+            <th>Adding This Amount</th>
+            <th>New Diner's Total</th>
+        </tr>
+
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
 <script type="text/javascript">
     let totalsArr = [];
 
@@ -34,8 +52,6 @@
     for (let i=0; i<totals.length; i++) {
         totalsArr.push(totals[i].innerHTML);
     }
-
-    console.log(totalsArr);
 
     let buttons = document.getElementsByClassName('btn btn-warning');
 
@@ -48,14 +64,44 @@
         let rowId = buttonId.split("_")[1];
         let pothId = `poth-total-id_\${rowId}`;
         let pothTotal = document.querySelector("#" + pothId).textContent;
-        // console.log("Click", buttonId);
-        // console.log(rowId);
-        // console.log(pothId);
-        // console.log(pothTotal);
 
         let pothEle = document.getElementById(pothId);
-        // console.log(pothEle);
-        pothEle.style.visibility = "hidden";
+        pothEle.innerHTML = "Free";
+
+        for (let i=0; i<buttons.length; i++) {
+            buttons[i].style.visibility = "hidden";
+        }
+        let removeHeader = document.getElementById("remove-header");
+        removeHeader.style.visibility = "hidden";
+
+        let index = totalsArr.indexOf(pothTotal);
+        console.log("Before the split and add", totalsArr);
+
+        if (index > -1) {
+            totalsArr.splice(index, 1);
+        }
+
+        let splitAmt = pothTotal/totalsArr.length;
+
+        let newTotalsArr = [];
+        totalsArr.map(function(val) {
+            console.log("This is the map val.", val)
+            console.log("Adding this split amt.", splitAmt);
+            let newTotal = +val + +splitAmt;
+            console.log("New total", newTotal);
+            newTotalsArr.push(newTotal);
+        })
+        console.log("this is the final newTotalArr", newTotalsArr);
+
+        function loadPOTHTableAfterSplit() {
+
+
+        }
+
+
+
+
+
     }
 
 
