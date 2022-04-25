@@ -17,7 +17,7 @@
 
         <c:forEach items="${divvyUpTaxAndTotalRows}" var="divvyUpTaxAndTotalRow" varStatus="loop">
             <tr scope="row">
-                <td>${divvyUpTaxAndTotalRow.diner_nickname}</td>
+                <td class="diner-names">${divvyUpTaxAndTotalRow.diner_nickname}</td>
                 <td>${divvyUpTaxAndTotalRow.subtotal}</td>
                 <td>${divvyUpTaxAndTotalRow.salestax}</td>
                 <td  class="diner-total" id="poth-total-id_${loop.index}">${divvyUpTaxAndTotalRow.total}</td>
@@ -40,7 +40,7 @@
             <th>New Diner's Total</th>
         </tr>
 
-        <tbody>
+        <tbody id="split-tbody">
         </tbody>
     </table>
 </div>
@@ -74,12 +74,13 @@
         let removeHeader = document.getElementById("remove-header");
         removeHeader.style.visibility = "hidden";
 
-        let index = totalsArr.indexOf(pothTotal);
+        let indexToRemove = totalsArr.indexOf(pothTotal);
         console.log("Before the split and add", totalsArr);
 
-        if (index > -1) {
-            totalsArr.splice(index, 1);
+        if (indexToRemove > -1) {
+            totalsArr.splice(indexToRemove, 1);
         }
+        console.log("This is the totalsArr with the poth total spliced out", totalsArr)
 
         let splitAmt = pothTotal/totalsArr.length;
 
@@ -92,22 +93,41 @@
             newTotalsArr.push(newTotal);
         })
         console.log("this is the final newTotalArr", newTotalsArr);
-
-        function loadPOTHTableAfterSplit() {
-
-
+        if (indexToRemove > -1) {
+            totalsArr.splice(indexToRemove, 1);
         }
 
+        dinerNamesArr = [];
+        let dinerNames = document.getElementsByClassName("diner-names");
+        for (let i=0; i<dinerNames.length; i++) {
+            dinerNamesArr.push(dinerNames[i].textContent);
+        }
+
+        if (indexToRemove > -1) {
+            dinerNamesArr.splice(indexToRemove, 1);
+        }
+        console.log("dinerNamesArr post slice", dinerNamesArr);
 
 
+        function loadPOTHTableAfterSplit() {
+            for (let i=0; i<dinerNames.length; i++) {
+                let dinerName = dinerNamesArr[i];
+                let originalTotal = totalsArr[i];
+                let addAmt = splitAmt;
+                let newTotal = +originalTotal + +splitAmt;
 
+                $("#split-tbody").append("<tr>");
+                $("#split-tbody").append(`<td>\${dinerName}</td>`);
+                $("#split-tbody").append(`<td>\${originalTotal}</td>`);
+                $("#split-tbody").append(`<td>\${addAmt}</td>`);
+                $("#split-tbody").append(`<td>\${newTotal}</td>`);
+                $("#split-tbody").append("</tr>");
+            }
+        }
+
+        loadPOTHTableAfterSplit();
 
     }
-
-
-
-
-
 </script>
 
 <jsp:include page="../include/footer.jsp"/>
