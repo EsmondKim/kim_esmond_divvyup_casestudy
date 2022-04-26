@@ -1,0 +1,39 @@
+:root {
+    --base-color: #ffffff;
+    --secondary-color:	#009246;
+    --action-color: 	#e90918;
+    --overlay-color: #d2e1f36c;
+}
+
+.nav-text {
+    font-weight: bold;
+    color: var(--action-color);
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#signin-body {
+    background-image: url(../../public/images/pasta_maker.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--overlay-color);
+    background-blend-mode: lighten;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 1em;
+    border: 3px solid var(--secondary-color);
+    border-radius: 1em;
+    background-color: var(--base-color);
+}

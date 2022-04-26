@@ -1,0 +1,20 @@
+:root {
+    --base-color: #ffffff;
+    --secondary-color:	#009246;
+    --action-color: 	#e90918;
+    --overlay-color: #d2e1f36c;
+}
+
+#registration-body {
+    background-image: url(../../public/images/at_the_table.jpg);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid rgba(204, 204, 204, 0.76);
+    border-radius: 1em;
+    background-color: azure;
+}

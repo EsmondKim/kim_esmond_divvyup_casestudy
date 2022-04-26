@@ -1,0 +1,49 @@
+:root {
+    --base-color: #ffffff;
+    --secondary-color:	#009246;
+    --action-color: 	#e90918;
+    --overlay-color: #d2e1f36c;
+}
+
+.nav-text {
+    font-weight: bold;
+    color: var(--action-color);
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+#index-body {
+    background-image: url(../images/tan_fresh_made_pasta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--overlay-color);
+    background-blend-mode: lighten;
+}
+
+#sauce-vid {
+    flex: 10%;
+}
+
+#emp-announcements {
+    flex: 80%;
+    align-items: center;
+}
+
+#cheese-vid {
+    flex: 10%;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: var(--secondary-color);
+    font-family: 'Fjalla One', sans-serif;
+}
