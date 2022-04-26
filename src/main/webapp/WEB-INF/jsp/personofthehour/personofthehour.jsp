@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<title>Richie M's | Person of the Hour</title>
 <jsp:include page="../include/header.jsp"/>
+
+<link rel="stylesheet" href="../../../public/css/styles_navbar_and_tables.css">
+<title>Richie M's | Person of the Hour</title>
 
 <h1>The Person Of The Hour</h1>
 
@@ -21,7 +23,7 @@
                 <td>${divvyUpTaxAndTotalRow.subtotal}</td>
                 <td>${divvyUpTaxAndTotalRow.salestax}</td>
                 <td  class="diner-total" id="poth-total-id_${loop.index}">${divvyUpTaxAndTotalRow.total}</td>
-                <td><button type="button" class="btn btn-warning" id="split-btn_${loop.index}">Split</button></td>
+                <td><button type="button" class="btn btn-success" id="split-btn_${loop.index}">Split</button></td>
             </tr>
         </c:forEach>
     </table>

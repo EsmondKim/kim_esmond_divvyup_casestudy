@@ -1,8 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp"/>
+
+<link rel="stylesheet" href="../../../public/css/styles_diner.css">
 <title>Richie M's | Add Diners</title>
 
-<body id="menu-body">
+<body id="diners-body">
 
 <div class="container">
 
@@ -25,8 +27,8 @@
                         <div style="color:red;">${error.getDefaultMessage()}</div>
                     </c:forEach>
                 </div> <!--form-floating mb-3-->
-                <button type="submit">Submit</button>
             </div><!--diners fields row-->
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div> <!--col-row-12-->
 

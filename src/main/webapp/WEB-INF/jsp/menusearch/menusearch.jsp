@@ -1,11 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp"/>
 
+<link rel="stylesheet" href="../../../public/css/styles_menu_search.css">
+
+<body id="menu-search-body">
+
 <h1>Search</h1>
 
 <form action="/menu/search" method="get">
     <input type="text" name="item" id="itemId" value="${item}" placeholder="Search For A Menu Item">
-    <button type="submit">Submit</button>
+    <button class="btn btn-success" type="submit">Submit</button>
 </form>
 
 <table class="table">

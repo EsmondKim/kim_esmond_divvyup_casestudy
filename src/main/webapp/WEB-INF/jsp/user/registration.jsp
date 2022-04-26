@@ -1,14 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <jsp:include page="../include/header.jsp"/>
+
+<link rel="stylesheet" href="../../../public/css/styles_registration.css">
 <title>Richie M's | Registration</title>
 
-<%--<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>--%>
-<%--<script>--%>
-<%--    $( document ).ready(function() {--%>
-<%--        console.log( "ready!" );--%>
-<%--    });--%>
-<%--</script>--%>
+<body id="registration-body">
 
 <div class="container">
 
@@ -64,7 +60,7 @@
                 </c:forEach>
             </div> <!--form-floating-->
 
-            <button type="submit" class="btn btn-info"
+            <button type="submit" class="btn btn-success"
                     style="margin-top: 20px; margin-left: 8px; width: 84px; height: 45px; font-size:14px;
           font-weight:700">
                 Submit</button>

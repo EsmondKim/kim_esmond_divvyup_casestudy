@@ -12,28 +12,16 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#registration-body {
-    background-image: url(../../public/images/shrimp_fettucinni.jpg);
+#users-body {
+    background-image: url(../../public/images/white_plates.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--overlay-color);
     background-blend-mode: lighten;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    border: 1px solid rgba(204, 204, 204, 0.76);
-    border-color: var(--secondary-color);
+.table {
+    border: 3px solid var(--secondary-color);
     border-radius: 1em;
     background-color: var(--base-color);
 }

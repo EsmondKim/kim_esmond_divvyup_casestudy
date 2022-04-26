@@ -1,6 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<title>Richie M's | The Tab</title>
 <jsp:include page="../include/header.jsp"/>
+
+<link rel="stylesheet" href="../../../public/css/styles_navbar_and_tables.css">
+<title>Richie M's | The Tab</title>
+
 <h1>The Tab</h1>
 <div class="col-row-12">
     <table class="table">

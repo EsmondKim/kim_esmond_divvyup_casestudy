@@ -12,13 +12,14 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#registration-body {
-    background-image: url(../../public/images/shrimp_fettucinni.jpg);
+#diners-body {
+    background-image: url(../../public/images/dark_green_herbs.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--overlay-color);
     background-blend-mode: lighten;
 }
+
 
 .container {
     display: flex;
@@ -30,10 +31,11 @@
 form {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+    min-height: 10vh;
+    width: 100%;
     padding: 1em;
-    border: 1px solid rgba(204, 204, 204, 0.76);
-    border-color: var(--secondary-color);
+    border: 3px solid var(--secondary-color);
     border-radius: 1em;
     background-color: var(--base-color);
 }

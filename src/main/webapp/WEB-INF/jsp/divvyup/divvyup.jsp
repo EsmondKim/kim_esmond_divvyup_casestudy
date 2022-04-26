@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<title>Richie M's | The DivvyUp</title>
 <jsp:include page="../include/header.jsp"/>
 
-<%--<script src="../../../public/scripts/divvyupscript.js"></script>--%>
+<link rel="stylesheet" href="../../../public/css/styles_navbar_and_tables.css">
+<title>Richie M's | The DivvyUp</title>
 
 <div class="container">
 

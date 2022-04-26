@@ -1,8 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="../include/header.jsp"/>
+<link rel="stylesheet" href="../../../public/css/styles_users.css">
 <title>Richie M's | Users</title>
 
+<body id="users-body">
 
 <h1>Employee and User Roster</h1>
 
@@ -22,7 +24,7 @@
                 <td>${user.getLastName()}</td>
                 <td>${user.getEmail()}</td>
                 <td id="user-sql-id_${loop.index}">${user.getId()}</td>
-                <td><button type="button" class="btn btn-warning" id="delete-btn_${loop.index}">Delete</button></td>
+                <td><button type="button" class="btn btn-danger" id="delete-btn_${loop.index}">Delete</button></td>
             </tr>
             </c:forEach>
         </table>

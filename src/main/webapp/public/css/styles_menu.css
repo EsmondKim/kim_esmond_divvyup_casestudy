@@ -1,0 +1,60 @@
+:root {
+    --base-color: #ffffff;
+    --secondary-color:	#009246;
+    --action-color: 	#e90918;
+    --overlay-color: #d2e1f36c;
+}
+
+.nav-text {
+    font-weight: bold;
+    color: var(--action-color);
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+#menu-body {
+    background-image: url(../../public/images/brown_white_cutting_board.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--overlay-color);
+    background-blend-mode: lighten;
+}
+
+form {
+    padding: 1em;
+    border: 3px solid var(--secondary-color);
+    background-color: var(--base-color);
+}
+
+.table {
+    border: 3px solid var(--secondary-color);
+    background-color: var(--base-color);
+}
+
+#menu {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    max-height: 100%;
+}
+
+#diners {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    max-height: 100%;
+}
+
+#add-to-order {
+    display: flex;
+    width: 33%;
+    justify-content: space-evenly;
+    max-height: 350px;
+}
+
+

@@ -1,4 +1,6 @@
 <jsp:include page="../include/header.jsp"/>
+
+<link rel="stylesheet" href="../../../public/css/styles_add_item_to_menu.css">
 <title>Richie M's | Add Item</title>
 
 <body id="add-item-body">
@@ -22,8 +24,8 @@
                     <input type="double" class="form-control" name="price" id="priceId" placeholder="Price" value=${form.price}>
                     <label for="priceId">Price</label>
                 </div> <!--form-floating mb-3-->
-                <button type="submit">Submit</button>
             </div><!--diners fields row-->
+            <button class="btn btn-success" type="submit">Submit</button>
         </form>
     </div> <!--col-row-12-->
 
