@@ -56,7 +56,7 @@
         totalsArr.push(totals[i].innerHTML);
     }
 
-    let buttons = document.getElementsByClassName('btn btn-warning');
+    let buttons = document.getElementsByClassName('btn btn-success');
 
     for (let i=0; i<buttons.length; i++) {
         buttons[i].addEventListener("click", clickHandler);
@@ -111,12 +111,18 @@
         console.log("dinerNames len", dinerNamesArr.length);
         console.log("this is totals array immediately before forLoop", totalsArr);
         console.log("totalsArr len",totalsArr.length);
+
+        let formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        });
+
         function loadPOTHTableAfterSplit() {
             for (let i=0; i<dinerNames.length-1; i++) {
                 let dinerName = dinerNamesArr[i];
                 let originalTotal = totalsArr[i];
                 let addAmt = splitAmt;
-                let newTotal = +originalTotal + +splitAmt;
+                let newTotal = formatter.format(+originalTotal + +splitAmt);
 
                 $("#split-tbody").append("<tr>");
                 $("#split-tbody").append(`<td>\${dinerName}</td>`);

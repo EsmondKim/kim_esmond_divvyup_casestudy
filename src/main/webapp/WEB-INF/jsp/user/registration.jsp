@@ -8,13 +8,7 @@
 
 <div class="container">
 
-    <c:if test="${empty form.id}">
     <h1>Sign Up</h1>
-    </c:if>
-
-    <c:if test="${not empty form.id}">
-    <h1>Edit User</h1>
-    </c:if>
 
     <form class="wrapper" action="/user/registerSubmit", method="get">
         <div class="row"><!--registration fields row-->

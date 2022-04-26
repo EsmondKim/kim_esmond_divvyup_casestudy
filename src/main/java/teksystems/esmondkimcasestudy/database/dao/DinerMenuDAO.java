@@ -14,12 +14,12 @@ public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
 
         public List<DinerMenu> findAll();
 
-        @Query(value="select item as 'item', quantity as 'quantity', price as 'price', (price * quantity) as 'total'\n" +
+        @Query(value="select item as 'item', quantity as 'quantity', price as 'price', round((price * quantity), 2) as 'total'\n" +
                 "from menus as m, diners_menus as dm\n" +
                 "where m.id = dm.item_id;", nativeQuery = true)
         List<Map<String, Object>> getItemQuantityPriceTotal();
 
-        @Query(value="select sum(price * quantity) as 'subtotal', (sum(price * quantity)) * 0.03 as 'salestax',  (sum(price * quantity)) + sum(price * quantity) * 0.03 as 'total'\n" +
+        @Query(value="select round(sum(price * quantity), 2) as 'subtotal', round(((sum(price * quantity)) * 0.03), 2) as 'salestax',  round((sum(price * quantity)) + round(sum(price * quantity) * 0.03), 2) as 'total'\n" +
                 "from menus as m, diners_menus as dm\n" +
                 "where m.id = dm.item_id;", nativeQuery = true)
         List<Map<String, Object>> getTotalsAndTaxes();
@@ -35,7 +35,7 @@ public interface DinerMenuDAO extends JpaRepository<DinerMenu, Long> {
                 "where m.id = dm.item_id and d.id = dm.seat_number_id", nativeQuery = true)
         List<Map<String, Object>> getDivvyUpRows();
 
-        @Query(value="select diner_nickname as 'diner_nickname', sum(price * quantity) as 'subtotal', (sum(price * quantity)) * 0.03 as 'salestax', (sum(price * quantity)) + sum(price * quantity) * 0.03 as 'total'\n" +
+        @Query(value="select diner_nickname as 'diner_nickname', round(sum(price * quantity), 2) as 'subtotal', round(((sum(price * quantity)) * 0.03), 2) as 'salestax', round(((sum(price * quantity)) + sum(price * quantity) * 0.03), 2) as 'total'\n" +
                 "from menus as m, diners_menus as dm, diners as d\n" +
                 "where m.id = dm.item_id and d.id = dm.seat_number_id\n" +
                 "group by diner_nickname;", nativeQuery = true)

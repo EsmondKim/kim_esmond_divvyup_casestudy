@@ -29,7 +29,7 @@
             </c:forEach>
         </table>
         <script type="text/javascript">
-            let buttons = document.getElementsByClassName('btn btn-warning');
+            let buttons = document.getElementsByClassName('btn btn-danger');
 
             for (let i=0; i<buttons.length; i++) {
                 buttons[i].addEventListener("click", clickHandler);
