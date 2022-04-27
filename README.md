@@ -40,7 +40,7 @@ Here are the pages of the app:
 
 Employees land on the index page:
 
-![Index](/src/main/webapp/public/images/index.jpg)
+![Index](/src/main/webapp/public/images/index_cropped.jpg)
 
 New emloyees can register to use the system.  This page makes use of a formbean, error validation, bindingresults, and JSTL.
 
