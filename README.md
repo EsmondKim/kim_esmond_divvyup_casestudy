@@ -54,7 +54,7 @@ I also found it cumbersome to chisel down into the resulting Maps, Arrays, and L
 I found it challenging to make the resulting data structures useful for iteration and computation and to package the data for consumption and rendering by the front end.
 To grow as a dev, I'd like to know more about these issues, and I suspect on-the-job mentorship would facilitate that.
 
-To streamline dev, I refactored to use Native SQL queries on the front end in the DAO layer:
+To streamline dev, I refactored to use Native SQL queries in the DAO layer to retrieve data for the frontend:
 https://github.com/EsmondKim/kim_esmond_divvyup_casestudy/commit/fc4788871da35f96dda10a16b2b1a397fd12b6e2
 ![Streams_and_Collectors](/src/main/webapp/public/images/nativeSQL.jpg)
 I found the native SQL queries to be more reliable and easier to consume on the front end, as compared to the products of the Java .streams() and Collectors methods.
