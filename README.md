@@ -29,12 +29,15 @@ Here are the pages of the app
 https://user-images.githubusercontent.com/56855925/165391959-0e5432bf-a613-4bf4-9c15-769825f64f3d.mp4
 
 ![Index](/src/main/webapp/public/images/index.jpg)
-[]: # (.)
-
-[./src/main/webapp/public/images/register.jpg]: # (![Here is a screenshot of a Saved Reading List.]&#40;./client/src/assets/images/ScreenShot2.jpg&#41;)
-Deployed website:
-
-[//]: # ([Here is a link to the deployed website]&#40;https://googlebooksapireadinglist.herokuapp.com/&#41;)
+![register](/src/main/webapp/public/images/register.jpg)
+![adddiners](/src/main/webapp/public/images/adddiners.jpg)
+![menu](/src/main/webapp/public/images/menu.jpg)
+![tab](/src/main/webapp/public/images/tab.jpg)
+![divvyup](/src/main/webapp/public/images/divvyup.jpg)
+![poth-before](/src/main/webapp/public/images/poth-before.jpg)
+![poth-after](/src/main/webapp/public/images/poth-after.jpg)
+![search](/src/main/webapp/public/images/search.jpg)
+![add-item](/src/main/webapp/public/images/add-item.jpg)
 
 ## GitHub
 
@@ -46,4 +49,5 @@ www.linkedin.com/in/esmondkim
 
 ##YouTube
 
-https://www.youtube.com/watch?v=wA98BojvYpA&t=42s
+[Link to YouTube demo of project.]: (https://www.youtube.com/watch?v=wA98BojvYpA&t=42s)
+
