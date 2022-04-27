@@ -28,7 +28,8 @@ SO THAT I can smoothly receive payment from customers.
 Here are the pages of the app
 https://user-images.githubusercontent.com/56855925/165391959-0e5432bf-a613-4bf4-9c15-769825f64f3d.mp4
 
-[./src/main/webapp/public/images/index.jpg]: # (![Here is a screenshot of the React Google Books API Reading List Search page.]&#40;./client/src/assets/images/ScreenShot1.jpg&#41;)
+![Index](/src/main/webapp/public/images/index.jpg)
+[]: # (.)
 
 [./src/main/webapp/public/images/register.jpg]: # (![Here is a screenshot of a Saved Reading List.]&#40;./client/src/assets/images/ScreenShot2.jpg&#41;)
 Deployed website:
