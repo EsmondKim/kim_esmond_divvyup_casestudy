@@ -30,7 +30,7 @@ https://user-images.githubusercontent.com/56855925/165391959-0e5432bf-a613-4bf4-
 
 [./src/main/webapp/public/images/index.jpg]: # (![Here is a screenshot of the React Google Books API Reading List Search page.]&#40;./client/src/assets/images/ScreenShot1.jpg&#41;)
 
-[//]: # (![Here is a screenshot of a Saved Reading List.]&#40;./client/src/assets/images/ScreenShot2.jpg&#41;)
+[./src/main/webapp/public/images/register.jpg]: # (![Here is a screenshot of a Saved Reading List.]&#40;./client/src/assets/images/ScreenShot2.jpg&#41;)
 Deployed website:
 
 [//]: # ([Here is a link to the deployed website]&#40;https://googlebooksapireadinglist.herokuapp.com/&#41;)
