@@ -3,56 +3,46 @@
 ## Table of Contents:
 
 1. [Description](#description)
-2. [Installation](#Installation)
-3. [Usage](#Usage)
-4. [Contributing](#Contributing)
-5. [Tests](#Tests)
-6. [License](#License)
-7. [GitHub](#GitHub)
-8. [E-mail](#E-mail)
+2. [The Pages](#pages)
+3. [Technical Overview](#Tech)
+Wireframe and ERD 
+4. [Code Dev and Discussion](#Dev)
+Lambdas vs SQL native and chiseling down into Java data. FE vs BE Math
+5. [Github](#Github)
+6. [LinkedIn](#LinkedIn)
+7. [YouTube](#YouTube)
 
 ## Description
 
-I built this React app to split restaurant bills conveniently.
+This app idea came from a real life experience.  My friend invited about 9 people to a bachelor's dinner.  
+It was a great event.  But what a buzzkill when the tab arrived and we wanted to split it 8 ways, while
+dividing the Man of the Hour's tab up among us.  The waitstaff flat out declined to do this for us, so one
+of my friends had to undertake the task with pen and paper.
 
 User Story:
 AS A waiter,
 I WANT an app that takes the splitting of dining tabs out of my hands and diners' hands,
 SO THAT I can smoothly receive payment from customers.
 
-Sceenshots
+## Pages
+Here are the pages of the app
+https://user-images.githubusercontent.com/56855925/165391959-0e5432bf-a613-4bf4-9c15-769825f64f3d.mp4
 
-[//]: # (![Here is a screenshot of the React Google Books API Reading List Search page.]&#40;./client/src/assets/images/ScreenShot1.jpg&#41;)
+[./src/main/webapp/public/images/index.jpg]: # (![Here is a screenshot of the React Google Books API Reading List Search page.]&#40;./client/src/assets/images/ScreenShot1.jpg&#41;)
 
 [//]: # (![Here is a screenshot of a Saved Reading List.]&#40;./client/src/assets/images/ScreenShot2.jpg&#41;)
 Deployed website:
 
 [//]: # ([Here is a link to the deployed website]&#40;https://googlebooksapireadinglist.herokuapp.com/&#41;)
 
-## Installation
-
-The app runs locally on my computer and this repository is for demonstration purposes.
-
-## Usage
-
-View the restaurant's menu and add orders.
-
-## Contributing
-
-Please open an issue to discuss any proposed contributions.
-
-## Tests
-
-Please update any tests as appropriate.
-
-## License
-
-![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-
 ## GitHub
 
 https://github.com/EsmondKim
 
-## E-mail
+## LinkedIn
 
 www.linkedin.com/in/esmondkim
+
+##YouTube
+
+https://www.youtube.com/watch?v=wA98BojvYpA&t=42s

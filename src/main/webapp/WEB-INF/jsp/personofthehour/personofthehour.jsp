@@ -121,7 +121,7 @@
             for (let i=0; i<dinerNames.length-1; i++) {
                 let dinerName = dinerNamesArr[i];
                 let originalTotal = totalsArr[i];
-                let addAmt = splitAmt;
+                let addAmt = formatter.format(splitAmt);
                 let newTotal = formatter.format(+originalTotal + +splitAmt);
 
                 $("#split-tbody").append("<tr>");
