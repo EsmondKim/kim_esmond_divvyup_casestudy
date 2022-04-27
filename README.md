@@ -68,7 +68,7 @@ https://github.com/EsmondKim/kim_esmond_divvyup_casestudy/blob/40618c897b5cac194
 ![Streams_and_Collectors](/src/main/webapp/public/images/JavaScript.jpg)
 
 
-##YouTube
+## YouTube
 
 https://www.youtube.com/watch?v=OhaOyPQwF4c
 
