@@ -28,7 +28,7 @@ SO THAT I can smoothly receive payment from customers.
 Here are the pages of the app
 https://user-images.githubusercontent.com/56855925/165391959-0e5432bf-a613-4bf4-9c15-769825f64f3d.mp4
 
-[//]: # (![Index]&#40;/src/main/webapp/public/images/index.jpg&#41;)
+![Index](/src/main/webapp/public/images/index.jpg)
 ![register](/src/main/webapp/public/images/register.jpg)
 ![adddiners](/src/main/webapp/public/images/adddiners.jpg)
 ![menu](/src/main/webapp/public/images/menu.jpg)
