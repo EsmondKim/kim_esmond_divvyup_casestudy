@@ -5,10 +5,11 @@
 1. [Description](#description)
 2. [Technical Overview](#Tech)
 3. [Code Dev and Discussion](#Dev)
-4. [YouTube](#YouTube)
-5. [The Pages](#Pages)
-6. [GitHub](#GitHub)
-7. [LinkedIn](#LinkedIn)
+4. [Known Issues](#Issues)
+5. [YouTube](#YouTube)
+6. [The Pages](#Pages)
+7. [GitHub](#GitHub)
+8. [LinkedIn](#LinkedIn)
 
 
 ## Description
@@ -67,6 +68,12 @@ Here's the relevant JavaScript.  I left the console.logs() in because they show 
 https://github.com/EsmondKim/kim_esmond_divvyup_casestudy/blob/40618c897b5cac194f595c4ca4d607734e522526/src/main/webapp/WEB-INF/jsp/personofthehour/personofthehour.jsp
 ![Streams_and_Collectors](/src/main/webapp/public/images/JavaScript.jpg)
 
+#Issues
+ 
+Sales Tax Computation:
+In certain circumstances, the sales tax may be counted twice for diners.
+This is currently a known issue, and this project is for academic and proof of concept purposes and not for production.  
+Devs are aware of the issue and will correct if dev continues.
 
 ## YouTube
 
