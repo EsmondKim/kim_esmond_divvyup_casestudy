@@ -68,7 +68,7 @@ Here's the relevant JavaScript.  I left the console.logs() in because they show 
 https://github.com/EsmondKim/kim_esmond_divvyup_casestudy/blob/40618c897b5cac194f595c4ca4d607734e522526/src/main/webapp/WEB-INF/jsp/personofthehour/personofthehour.jsp
 ![Streams_and_Collectors](/src/main/webapp/public/images/JavaScript.jpg)
 
-#Issues
+## Issues
  
 Sales Tax Computation:
 In certain circumstances, the sales tax may be counted twice for diners.
