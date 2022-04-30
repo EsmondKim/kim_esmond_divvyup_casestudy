@@ -75,6 +75,8 @@ In certain circumstances, the sales tax may be counted twice for diners.
 This is currently a known issue, and this project is for academic and proof of concept purposes and not for production.  
 Devs are aware of the issue and will correct if dev continues.
 
+Decimal Formatting: Currency decimals ending in 0 are sometimes displaying as $4.2 instead of $4.20, and so on.
+
 ## YouTube
 
 https://www.youtube.com/watch?v=OhaOyPQwF4c
